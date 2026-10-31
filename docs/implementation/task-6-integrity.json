@@ -1,0 +1,173 @@
+{
+  "basis": "actual full original file bytes; no normalization or writes",
+  "baseline": "e7907d90549af41ab65467c997e1c04a3ff34284",
+  "datasetCommit": "4fb99b3749adf0d10b5977089ff4c73f4f522240",
+  "datasetGitStatus": "",
+  "allUnchanged": true,
+  "files": [
+    {
+      "file": "data/companies.csv",
+      "bytes": 563393,
+      "expectedSha256": "252a7f32d37ca8b4826a94b6282f6515c9a1fd32d24b5fe3b067da12e5fc60ba",
+      "actualSha256": "252a7f32d37ca8b4826a94b6282f6515c9a1fd32d24b5fe3b067da12e5fc60ba",
+      "unchanged": true
+    },
+    {
+      "file": "data/companies.json",
+      "bytes": 1217444,
+      "expectedSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97",
+      "actualSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97",
+      "unchanged": true
+    },
+    {
+      "file": "data/publications.jsonl",
+      "bytes": 19601447,
+      "expectedSha256": "25d8be510899a943cbed484ae7b7587ca81d538bbe736eff065e928b3b3c0019",
+      "actualSha256": "25d8be510899a943cbed484ae7b7587ca81d538bbe736eff065e928b3b3c0019",
+      "unchanged": true
+    },
+    {
+      "file": "data/researchers.csv",
+      "bytes": 2686984,
+      "expectedSha256": "40a5a9ebae44ed84ea5f2fdc446af235b528eb2a87a9270a5957f360788e658c",
+      "actualSha256": "40a5a9ebae44ed84ea5f2fdc446af235b528eb2a87a9270a5957f360788e658c",
+      "unchanged": true
+    },
+    {
+      "file": "data/researchers.json",
+      "bytes": 3317058,
+      "expectedSha256": "00de62344d92b6c41c8b67c7e39b1cd8db5553d4050f4c4e92df89ea172dde40",
+      "actualSha256": "00de62344d92b6c41c8b67c7e39b1cd8db5553d4050f4c4e92df89ea172dde40",
+      "unchanged": true
+    },
+    {
+      "file": "data/projects.json",
+      "bytes": 2594601,
+      "expectedSha256": "847cb13091f91ed9fe57f6aea0088cd1e66ed0263c86a5090f169a2b30ab3a1a",
+      "actualSha256": "847cb13091f91ed9fe57f6aea0088cd1e66ed0263c86a5090f169a2b30ab3a1a",
+      "unchanged": true
+    },
+    {
+      "file": "data/patents.json",
+      "bytes": 109977,
+      "expectedSha256": "3b67cedd20f63d29cdb2ee868bd11761f2b4ba7e562988cb4b2af466cefccfe0",
+      "actualSha256": "3b67cedd20f63d29cdb2ee868bd11761f2b4ba7e562988cb4b2af466cefccfe0",
+      "unchanged": true
+    },
+    {
+      "file": "data/company-pages.jsonl",
+      "bytes": 1689882,
+      "expectedSha256": "c2a81d2efe185186ddef8c15b4213acf8e65f061a1fc76f241ccc4c1a88bf775",
+      "actualSha256": "c2a81d2efe185186ddef8c15b4213acf8e65f061a1fc76f241ccc4c1a88bf775",
+      "unchanged": true
+    }
+  ],
+  "preservedUntracked": [
+    {
+      "path": "docs/implementation/task-5-process-evidence-1793372122790-cea89b73-a93e-405f-92a4-b41e41be578c.json",
+      "sha256": "c7b184d0762473dc424cabc94029d4683109ba07f5688989cec6dc24b966d9d4",
+      "currentSha256": "c7b184d0762473dc424cabc94029d4683109ba07f5688989cec6dc24b966d9d4",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-process-evidence-1793373737467-7f6e29a3-df1f-4368-9bef-0126fb00f803.json",
+      "sha256": "0cd025baecf6299eabfa907dd968e945a1fe9360e8869e76967157f6836e5c9f",
+      "currentSha256": "0cd025baecf6299eabfa907dd968e945a1fe9360e8869e76967157f6836e5c9f",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-process-evidence-scan-repair-1793373727778-6ab5f84d-f10a-4a0e-b911-c263c33f3c2f.json",
+      "sha256": "be7357342219b3cb79a99a9b9713e27677912907189aac5f50f4a239aad4c24b",
+      "currentSha256": "be7357342219b3cb79a99a9b9713e27677912907189aac5f50f4a239aad4c24b",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-process-independent-audit-e19a942b59cc4ef79ef0a4ce44d79fc6.json",
+      "sha256": "25bcd6e79b2fc460adcc182baccf7eb40e0d677e559ac020ca62a838462c0c49",
+      "currentSha256": "25bcd6e79b2fc460adcc182baccf7eb40e0d677e559ac020ca62a838462c0c49",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-process-independent-scan-fix-audit-cab0b3a9d0954c908b801ba7e61e3c5b.json",
+      "sha256": "5987fe7cf4acbeaa8a8d156131e63c6e091b36bae0eb121e0cb53f1eab2039ac",
+      "currentSha256": "5987fe7cf4acbeaa8a8d156131e63c6e091b36bae0eb121e0cb53f1eab2039ac",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-1793372098745-9ac5e5ba-6403-4e66-a777-62c94db39bdf.json",
+      "sha256": "09fdd00d61429583bce681c636bcf59f5e7f7c0bba1dc386f8953400d56c279d",
+      "currentSha256": "09fdd00d61429583bce681c636bcf59f5e7f7c0bba1dc386f8953400d56c279d",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-1793373713047-a75b39ec-5d74-450f-81bc-0e7cfcfd34d9.json",
+      "sha256": "48b9beb9c4d404912e78ac6b1c946b9afea5c658f0612b19f225b12651755d17",
+      "currentSha256": "48b9beb9c4d404912e78ac6b1c946b9afea5c658f0612b19f225b12651755d17",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-crash-1793372107426-ab1230a5-9cf5-4b13-b693-73fa8951820c.json",
+      "sha256": "ed2eb77e2ecfee5e3653c55405a8febdc80aae3e5d47d4574d253bd8cc51d454",
+      "currentSha256": "ed2eb77e2ecfee5e3653c55405a8febdc80aae3e5d47d4574d253bd8cc51d454",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-crash-1793373722010-58127f90-4ff7-47b0-b33c-9c3a23e73683.json",
+      "sha256": "34fa5f66070691ea136012b1533e35f6f8f9a3ac774448a63c261618d3ef572c",
+      "currentSha256": "34fa5f66070691ea136012b1533e35f6f8f9a3ac774448a63c261618d3ef572c",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-never-ready-1793372103498-fb79d491-b6e8-4f5b-a9b5-3885527971c9.json",
+      "sha256": "b8a7b940c66866a9a8ed770eb181e63491e5c6b808b6a348a197802d71143b27",
+      "currentSha256": "b8a7b940c66866a9a8ed770eb181e63491e5c6b808b6a348a197802d71143b27",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-never-ready-1793373717898-ea06966f-dd7b-4000-993d-bc9c39101412.json",
+      "sha256": "e04bcf912c28277f0f857a684e84fadcc59a233358621dafbd92bbdd0a88384c",
+      "currentSha256": "e04bcf912c28277f0f857a684e84fadcc59a233358621dafbd92bbdd0a88384c",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-pre-ready-cancel-1793372105928-37a29931-0a10-4360-ad54-4ba7ecfb4a37.json",
+      "sha256": "aa6de1fc9bd5aa0eb0a1d8b8cbeb28fb034e09f06cb9dc6bc8ee90a3c7807250",
+      "currentSha256": "aa6de1fc9bd5aa0eb0a1d8b8cbeb28fb034e09f06cb9dc6bc8ee90a3c7807250",
+      "unchanged": true,
+      "untracked": true
+    },
+    {
+      "path": "docs/implementation/task-5-scheduler-evidence-lifecycle-pre-ready-cancel-1793373720430-090833a3-5655-40ef-9262-f75ccb9c37d2.json",
+      "sha256": "a86e2d9e029f2bff57ae726d8995577069b892223d9ae45ed18227ffa006b9fb",
+      "currentSha256": "a86e2d9e029f2bff57ae726d8995577069b892223d9ae45ed18227ffa006b9fb",
+      "unchanged": true,
+      "untracked": true
+    }
+  ],
+  "protectedPaths": [
+    "src/contracts",
+    "src/data",
+    "src/evidence",
+    "src/retrieval",
+    "src/evaluation",
+    "src/supervisor",
+    "src/storage",
+    "src/server",
+    "web",
+    "artifacts",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "protectedDiffEmpty": true
+}

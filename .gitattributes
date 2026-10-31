@@ -1,0 +1,22 @@
+# Export manifests and replay records describe these exact bytes.
+artifacts/demo-store/** -text
+artifacts/demo-store-manifest.json -text
+artifacts/showcase/final/** -text
+docs/implementation/task-10-live/** -text
+docs/implementation/task-10-* -text
+docs/implementation/task-10-*/** -text
+tests/fixtures/historical-recovery/** -text
+# Frozen historical test specimens are compared by their original raw hashes.
+docs/implementation/task-6-integrity.json -text
+docs/implementation/task-7s-authorization.json -text
+docs/implementation/task-7t-live/** -text
+docs/implementation/task-7v-baseline.json -text
+docs/implementation/task-7v-live/freeze.json -text
+docs/implementation/task-7x-baseline.json -text
+docs/implementation/task-7x-live/freeze.json -text
+docs/implementation/task-7y-authorization*.json -text
+docs/implementation/task-7y-baseline.json -text
+docs/implementation/task-7x-v4-worker-evidence-forward-*.json -text
+docs/implementation/task-7-live/freeze.json -text
+docs/implementation/task-7-live/runs/897203e4-d779-4c3e-8696-52ce718d537e/result.json -text
+docs/implementation/task-7r-recovery-evidence-v2.json -text

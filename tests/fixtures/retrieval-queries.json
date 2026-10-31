@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "manifestVersion": "retrieval-queries-v1",
+  "datasetCommit": "4fb99b3749adf0d10b5977089ff4c73f4f522240",
+  "canonicalizationVersion": "node-stable-json-v1",
+  "freeze": {
+    "status": "frozen_before_retrieval",
+    "preparation": "ai_prepared",
+    "retrievalOutputsObserved": false,
+    "holdoutRankingsObserved": false
+  },
+  "splitPolicy": {
+    "unit": "company",
+    "variantGrouping": "challenge",
+    "devCompanyIds": [
+      "C001",
+      "C009",
+      "C025",
+      "C035",
+      "C002",
+      "C003"
+    ],
+    "holdoutCompanyIds": [
+      "C040",
+      "C061",
+      "C112"
+    ]
+  },
+  "queries": [
+    {
+      "queryId": "q-C001-CH1-original",
+      "split": "dev",
+      "companyId": "C001",
+      "challengeId": "C001-CH1",
+      "companyGroupId": "C001",
+      "variantGroupId": "C001-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C001",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/0"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "We need to detect unusual behaviour on Modbus and BACnet networks without labelled attack data — our clients have never been breached (or don't know it), so we have zero examples of malicious traffic and supervised classifiers are useless to us.",
+          "excerptSha256": "017911afb73916572dc4056aee6192d557da0b63c4462afa0ff2a5c820fa9987",
+          "recordSha256": "d4f15953c5c1b3f9eb19323c7a56bbb28f80aa3431e23d182759de11b6c35c62",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C001",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/0"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Our ProtoSense module watches Modbus and BACnet traffic and is supposed to flag anything that looks wrong. The problem is that none of our clients has ever given us a packet capture that contains a confirmed attack. A few of them have been running their networks for twenty years with no security monitoring at all, so if they were compromised they would not know. We have plenty of normal traffic — we have collected several terabytes of captures from consenting clients over the past three years — but we have nothing labelled as malicious. We tried building a supervised classifier once, fed it data from public ICS datasets, and it flagged so many false positives in real deployments that clients started switching the alerts off. What we actually need is something that learns what normal looks like on a specific site and raises a flag when behaviour drifts from that baseline. We have the traffic archives, we have the hardware to run inference on-device, and we have one engineer who has been reading about anomaly detection for six months. We need a method that works with no attack examples and that we can explain to a plant manager in plain language.",
+          "excerptSha256": "ce8957482325fee73583a669d85dde38e0ef4a06cb6584f9a0aa707fabf2d282",
+          "recordSha256": "d4f15953c5c1b3f9eb19323c7a56bbb28f80aa3431e23d182759de11b6c35c62",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "We need to detect unusual behaviour on Modbus and BACnet networks without labelled attack data — our clients have never been breached (or don't know it), so we have zero examples of malicious traffic and supervised classifiers are useless to us.\nOur ProtoSense module watches Modbus and BACnet traffic and is supposed to flag anything that looks wrong. The problem is that none of our clients has ever given us a packet capture that contains a confirmed attack. A few of them have been running their networks for twenty years with no security monitoring at all, so if they were compromised they would not know. We have plenty of normal traffic — we have collected several terabytes of captures from consenting clients over the past three years — but we have nothing labelled as malicious. We tried building a supervised classifier once, fed it data from public ICS datasets, and it flagged so many false positives in real deployments that clients started switching the alerts off. What we actually need is something that learns what normal looks like on a specific site and raises a flag when behaviour drifts from that baseline. We have the traffic archives, we have the hardware to run inference on-device, and we have one engineer who has been reading about anomaly detection for six months. We need a method that works with no attack examples and that we can explain to a plant manager in plain language.",
+      "queryTextSha256": "4a2e44e2f5deedfb92af4ab75fb08ccc15daeb26636a32874862473e738284ac",
+      "querySourceHash": "71c4777bf4c050993f4f7c86809cadeecf078cc6854c9ff6c115c88c4b84392d"
+    },
+    {
+      "queryId": "q-C009-CH1-original",
+      "split": "dev",
+      "companyId": "C009",
+      "challengeId": "C009-CH1",
+      "companyGroupId": "C009",
+      "variantGroupId": "C009-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C009",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/8"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Our search misses answers because Serbian words change form (e.g. 'kartica', 'karticu', 'karticom') and users mix Latin and Cyrillic.",
+          "excerptSha256": "0a6cbfe669eb5fd7dbf4df77b9763b7a4ef35eeb4d14184072e523aab1fd9c76",
+          "recordSha256": "81af2a847405d171b23e3c46ce84c1bf47f844bb42de25d203bb5898cf654e98",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C009",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/8"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Serbian is a heavily inflected language, so a single noun like 'kartica' (card) appears as 'karticu', 'karticom', 'kartice', 'karticama' depending on case, and verbs shift even more. On top of that, our users freely switch between Latin and Cyrillic script mid-sentence — sometimes mid-word in typos. Our current Elasticsearch setup uses a basic stemmer that was built for Croatian and misses a significant share of Serbian-specific forms. We have measured this: in a sample of 12,000 real support queries from one bank client, about 18% returned no useful result, and our analysis traced more than half of those misses directly to morphological mismatch or script confusion. We have tried adding synonym lists and a simple script-normalisation step, but maintaining those lists manually does not scale as clients add new product terminology every quarter. We have a labelled query-response dataset of around 85,000 pairs across all clients, and our two in-house linguists can annotate or validate proposed solutions. We need an approach that handles lemmatisation or indexing in a way that is accurate for Serbian, tolerates script mixing automatically, and can be updated when new vocabulary arrives without a full re-index. A good outcome is getting that 18% miss rate below 5% and keeping it there with a manageable maintenance process. Budget for tooling or data work is modest — around 8,000 EUR — and we want something testable within six months.",
+          "excerptSha256": "582622587d4d39198411e305564c7d855b2fde63f326ccbb86c2fdcc87bed26b",
+          "recordSha256": "81af2a847405d171b23e3c46ce84c1bf47f844bb42de25d203bb5898cf654e98",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Our search misses answers because Serbian words change form (e.g. 'kartica', 'karticu', 'karticom') and users mix Latin and Cyrillic.\nSerbian is a heavily inflected language, so a single noun like 'kartica' (card) appears as 'karticu', 'karticom', 'kartice', 'karticama' depending on case, and verbs shift even more. On top of that, our users freely switch between Latin and Cyrillic script mid-sentence — sometimes mid-word in typos. Our current Elasticsearch setup uses a basic stemmer that was built for Croatian and misses a significant share of Serbian-specific forms. We have measured this: in a sample of 12,000 real support queries from one bank client, about 18% returned no useful result, and our analysis traced more than half of those misses directly to morphological mismatch or script confusion. We have tried adding synonym lists and a simple script-normalisation step, but maintaining those lists manually does not scale as clients add new product terminology every quarter. We have a labelled query-response dataset of around 85,000 pairs across all clients, and our two in-house linguists can annotate or validate proposed solutions. We need an approach that handles lemmatisation or indexing in a way that is accurate for Serbian, tolerates script mixing automatically, and can be updated when new vocabulary arrives without a full re-index. A good outcome is getting that 18% miss rate below 5% and keeping it there with a manageable maintenance process. Budget for tooling or data work is modest — around 8,000 EUR — and we want something testable within six months.",
+      "queryTextSha256": "dc90b34aac1c0e10a672a4a0cdc98e7ec89b98c147afba3fa4d4e4cc5651c8e9",
+      "querySourceHash": "3a89e1f22b121f2ec2b244a8d7e194b81f0a26283ccd39578151311fd78dbef2"
+    },
+    {
+      "queryId": "q-C025-CH4-original",
+      "split": "dev",
+      "companyId": "C025",
+      "challengeId": "C025-CH4",
+      "companyGroupId": "C025",
+      "variantGroupId": "C025-CH4",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C025",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/24"
+            },
+            "fieldPointer": "/challenges/3/text",
+            "derivedRecordId": false
+          },
+          "value": "We want to automate the optical inspection of our assembled boards — we currently have two operators checking solder joints by eye for 6 hours a day — but our component mix changes every two weeks and training a new vision model for every board variant is not practical with our current approach.",
+          "excerptSha256": "fd6b82e176e49148c2ce63543ab378b048aa3aa0128c42c5a73ebab546309a5b",
+          "recordSha256": "970556a59aa8eba6165880b1f4c027d42a64a091094510203dfc342e353703ca",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C025",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/24"
+            },
+            "fieldPointer": "/challenges/3/detail",
+            "derivedRecordId": false
+          },
+          "value": "We have two operators spending about six hours a day each doing manual visual inspection of solder joints across our assembly line. As board volume grows and component sizes shrink, manual inspection is becoming a bottleneck and a consistency problem — we had two field returns last quarter that our inspectors should have caught. We looked at off-the-shelf AOI systems and the hardware is affordable, but every vendor we spoke to told us the vision model needs retraining whenever the board mix changes, and our mix changes roughly every two weeks. Manually labelling images and retraining from scratch each time is not practical with our team size. We have a small dataset of images from our current camera setup — roughly 4,000 labelled images of solder joints across eight board types — but no machine learning expertise in-house. We would like an approach where the model can adapt to a new board type with far fewer labelled examples than a full training run requires, ideally something our quality technicians can manage without a data scientist on call every time.",
+          "excerptSha256": "65677f10262b6ffa79e82168929105d09c39b37c64fd690f7c7e58ee557409f3",
+          "recordSha256": "970556a59aa8eba6165880b1f4c027d42a64a091094510203dfc342e353703ca",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "We want to automate the optical inspection of our assembled boards — we currently have two operators checking solder joints by eye for 6 hours a day — but our component mix changes every two weeks and training a new vision model for every board variant is not practical with our current approach.\nWe have two operators spending about six hours a day each doing manual visual inspection of solder joints across our assembly line. As board volume grows and component sizes shrink, manual inspection is becoming a bottleneck and a consistency problem — we had two field returns last quarter that our inspectors should have caught. We looked at off-the-shelf AOI systems and the hardware is affordable, but every vendor we spoke to told us the vision model needs retraining whenever the board mix changes, and our mix changes roughly every two weeks. Manually labelling images and retraining from scratch each time is not practical with our team size. We have a small dataset of images from our current camera setup — roughly 4,000 labelled images of solder joints across eight board types — but no machine learning expertise in-house. We would like an approach where the model can adapt to a new board type with far fewer labelled examples than a full training run requires, ideally something our quality technicians can manage without a data scientist on call every time.",
+      "queryTextSha256": "ae437e1218919d23a42131a4a1ab3471007e2610a65a7adb75f08f7f60a6c177",
+      "querySourceHash": "f052a9e4afa1fddeb046841ac29cad84b99c85b27b4b07d8eaa6ef72d0c9badf"
+    },
+    {
+      "queryId": "q-C035-CH4-original",
+      "split": "dev",
+      "companyId": "C035",
+      "challengeId": "C035-CH4",
+      "companyGroupId": "C035",
+      "variantGroupId": "C035-CH4",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C035",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/34"
+            },
+            "fieldPointer": "/challenges/3/text",
+            "derivedRecordId": false
+          },
+          "value": "We need a seed investment round of €150,000 to fund the next two collections and a warehouse deposit, but three angel investors passed because we don't have audited financials and our bookkeeping is done in a spreadsheet by the founder's partner who has no accounting background.",
+          "excerptSha256": "fb1282d460c32d865b72b524fd95f27d9821f8d8c597faeb6166e464c06495d1",
+          "recordSha256": "1d4efd360a7e3c57b1543156072e77b94534db22b4481c13a16a4351a729c432",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C035",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/34"
+            },
+            "fieldPointer": "/challenges/3/detail",
+            "derivedRecordId": false
+          },
+          "value": "We need €150,000 to cover fabric and production costs for the next two collections and to pay a deposit on a small warehouse space we've identified near Rumenka, which would replace the shared storage arrangement we currently use and give us better control over dispatch times. We've had three conversations with angel investors — two from the Novi Sad startup scene and one introduced through NTP's network — and all three passed at the due-diligence stage. The feedback each time was the same: our financials aren't in order. Our bookkeeping has been handled since founding by the founder's partner, who is organised and careful but has no formal accounting background. Everything lives in Google Sheets. There are no audited statements, no proper profit-and-loss formatted to any standard an investor would recognise, and no clear separation between company and founder cash flows in earlier years. We know this is fixable, but we don't know the fastest path to fixing it in a way that would satisfy an investor rather than just tidy things up for our own use. We're not looking for someone to do the bookkeeping going forward — we can hire for that — we need to understand what the minimum credible financial package looks like and how to get there.",
+          "excerptSha256": "6c67a2749b05262d2380c59cad822a00fd70f61550088c126e699ab565dd6a94",
+          "recordSha256": "1d4efd360a7e3c57b1543156072e77b94534db22b4481c13a16a4351a729c432",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "We need a seed investment round of €150,000 to fund the next two collections and a warehouse deposit, but three angel investors passed because we don't have audited financials and our bookkeeping is done in a spreadsheet by the founder's partner who has no accounting background.\nWe need €150,000 to cover fabric and production costs for the next two collections and to pay a deposit on a small warehouse space we've identified near Rumenka, which would replace the shared storage arrangement we currently use and give us better control over dispatch times. We've had three conversations with angel investors — two from the Novi Sad startup scene and one introduced through NTP's network — and all three passed at the due-diligence stage. The feedback each time was the same: our financials aren't in order. Our bookkeeping has been handled since founding by the founder's partner, who is organised and careful but has no formal accounting background. Everything lives in Google Sheets. There are no audited statements, no proper profit-and-loss formatted to any standard an investor would recognise, and no clear separation between company and founder cash flows in earlier years. We know this is fixable, but we don't know the fastest path to fixing it in a way that would satisfy an investor rather than just tidy things up for our own use. We're not looking for someone to do the bookkeeping going forward — we can hire for that — we need to understand what the minimum credible financial package looks like and how to get there.",
+      "queryTextSha256": "d44af694a9cac9733a9926f9f797bc4325826ae4a638ad7456dcfeefa74c348d",
+      "querySourceHash": "af216551e92e52230e28895c3dcd1cb56f1cb2b001b7d2d92d8b862d48b3e3ad"
+    },
+    {
+      "queryId": "q-C002-CH1-original",
+      "split": "dev",
+      "companyId": "C002",
+      "challengeId": "C002-CH1",
+      "companyGroupId": "C002",
+      "variantGroupId": "C002-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C002",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/1"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Teachers tell us our math games are fun but they can't see whether a child is actually learning — we have clickstream data for 4,200 students but no way to tell if a pupil is guessing randomly versus genuinely understanding the material.",
+          "excerptSha256": "86602b2e3e26e68a0a4c5ca71d5ce77844bc57816a4b0aacb0d88a72e16cc28b",
+          "recordSha256": "61ea72b923cfb761339f88e339f42fe716c10c67a664b9d55f4dcd9a9d362398",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C002",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/1"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Every time a child clicks an answer in our math games, we log it — timestamp, question ID, answer chosen, how long they took, how many attempts. We have that data for about 4,200 students across the 2022–23 and 2023–24 school years. The problem is we have no way to read anything meaningful out of it. A teacher told us last spring that one of her students had a 91% score but she was convinced the child understood nothing and was just clicking fast until something turned green. She was right — when she tested the child on paper the results were very different. We know this is a real problem but we do not know how to separate genuine learning from lucky guessing using the data we already have. We have exported the logs to CSV and tried building simple accuracy thresholds ourselves, but that does not catch the fast random clicker. We cannot afford to buy an off-the-shelf analytics platform, and we would not trust one that does not explain what it is doing. A good outcome for us would be a method or a small working tool that flags students who are likely guessing, so teachers can act on it. We would ideally have something testable before the 2025–26 school year starts.",
+          "excerptSha256": "6db17745d225171fd5a37834939706b10367187a3fd29c731064b84860abef1d",
+          "recordSha256": "61ea72b923cfb761339f88e339f42fe716c10c67a664b9d55f4dcd9a9d362398",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Teachers tell us our math games are fun but they can't see whether a child is actually learning — we have clickstream data for 4,200 students but no way to tell if a pupil is guessing randomly versus genuinely understanding the material.\nEvery time a child clicks an answer in our math games, we log it — timestamp, question ID, answer chosen, how long they took, how many attempts. We have that data for about 4,200 students across the 2022–23 and 2023–24 school years. The problem is we have no way to read anything meaningful out of it. A teacher told us last spring that one of her students had a 91% score but she was convinced the child understood nothing and was just clicking fast until something turned green. She was right — when she tested the child on paper the results were very different. We know this is a real problem but we do not know how to separate genuine learning from lucky guessing using the data we already have. We have exported the logs to CSV and tried building simple accuracy thresholds ourselves, but that does not catch the fast random clicker. We cannot afford to buy an off-the-shelf analytics platform, and we would not trust one that does not explain what it is doing. A good outcome for us would be a method or a small working tool that flags students who are likely guessing, so teachers can act on it. We would ideally have something testable before the 2025–26 school year starts.",
+      "queryTextSha256": "2cda1ccbf4909312c03f241df6836879245dea441fc1f8b0741568434dfd5b8f",
+      "querySourceHash": "0738ca753faa283831c51e142d315b2f83c80200c1959e318604970b307cc9c5"
+    },
+    {
+      "queryId": "q-C003-CH1-original",
+      "split": "dev",
+      "companyId": "C003",
+      "challengeId": "C003-CH1",
+      "companyGroupId": "C003",
+      "variantGroupId": "C003-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C003",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/2"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Our conveyor frames crack at the weld joints after roughly 18 months of operation in chilled environments; we've replaced 14 assemblies under warranty this year and we can't reproduce the failure in our workshop because we test at room temperature.",
+          "excerptSha256": "723403accd31735e94893c91909fd91401d3fec0ed939bb5829c91111547fc41",
+          "recordSha256": "6d1343847dd1b31cc0494d578acef40da4a342931f2c0ec5372c830baef554b3",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C003",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/2"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Our conveyor frames are welded from mild steel hollow section and painted for corrosion resistance before delivery. When these systems run in customer cold stores — typically operating between 2 °C and 6 °C — we are seeing weld joint cracking at the main crossmember-to-stringer connections after about 18 months of continuous use. This year alone we have replaced 14 complete frame assemblies under warranty, which is costing us in material, travel, and lost engineer time. The frustrating part is that we have tried to reproduce the failure in our workshop and cannot do it. We test frames under load at room temperature and they pass without any problem. Our suspicion is that the combination of thermal cycling, condensation, and the vibration load from loaded belts is doing something we are not seeing at ambient conditions. We have photos and measurements of the cracked joints from site visits, and we still have two of the failed sections in storage. We do not currently have the equipment or know-how to test at low temperatures under cyclic load. A good outcome would be understanding exactly what is causing the cracks so we can change our welding procedure, filler material, or joint design and stop the warranty replacements.",
+          "excerptSha256": "130a180e45e111a5a2cd9121cdba3907c741146d0bb4beb39666c6beb0fc559e",
+          "recordSha256": "6d1343847dd1b31cc0494d578acef40da4a342931f2c0ec5372c830baef554b3",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Our conveyor frames crack at the weld joints after roughly 18 months of operation in chilled environments; we've replaced 14 assemblies under warranty this year and we can't reproduce the failure in our workshop because we test at room temperature.\nOur conveyor frames are welded from mild steel hollow section and painted for corrosion resistance before delivery. When these systems run in customer cold stores — typically operating between 2 °C and 6 °C — we are seeing weld joint cracking at the main crossmember-to-stringer connections after about 18 months of continuous use. This year alone we have replaced 14 complete frame assemblies under warranty, which is costing us in material, travel, and lost engineer time. The frustrating part is that we have tried to reproduce the failure in our workshop and cannot do it. We test frames under load at room temperature and they pass without any problem. Our suspicion is that the combination of thermal cycling, condensation, and the vibration load from loaded belts is doing something we are not seeing at ambient conditions. We have photos and measurements of the cracked joints from site visits, and we still have two of the failed sections in storage. We do not currently have the equipment or know-how to test at low temperatures under cyclic load. A good outcome would be understanding exactly what is causing the cracks so we can change our welding procedure, filler material, or joint design and stop the warranty replacements.",
+      "queryTextSha256": "82a645e32272fe5f49889cae7e137908ecb86446fc573401c238eecfee415363",
+      "querySourceHash": "1d375bc954da5a615c7df905339c72edfd2e209262a6989d3be21558dcbe199a"
+    },
+    {
+      "queryId": "q-C040-CH1-original",
+      "split": "holdout",
+      "companyId": "C040",
+      "challengeId": "C040-CH1",
+      "companyGroupId": "C040",
+      "variantGroupId": "C040-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C040",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/39"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Our bone-fracture detection model hits 91% sensitivity on our test set, but when we deploy it at partner hospitals with older Siemens and Philips scanners, sensitivity drops to around 78% — we lose about 13 percentage points just from scanner-to-scanner variation in DICOM metadata and image reconstruction kernels.",
+          "excerptSha256": "2308823568fd9d22d8d45871dc44897c30e674054f87435c34a17f025d0467bb",
+          "recordSha256": "01b95548a090825144b0a458956b3a3bb50df59ba524a7e32422e5ef9935eb57",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C040",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/39"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "ClearFrame Bone scores 91% sensitivity on our internal test set, which was built from scans collected on three mid-range Siemens and Philips machines at our main pilot site in Novi Sad. When we deploy at partner hospitals that run older scanner generations — mostly equipment installed before 2015 — sensitivity falls to around 78%. The gap comes from differences in how those scanners encode DICOM headers and apply reconstruction kernels during image processing. The resulting images look similar to the human eye but are statistically different enough to confuse our model. We have tried simple histogram normalisation and CLAHE preprocessing, and we collected roughly 1,200 additional scans from two partner sites to fine-tune on. The drop improved by about 3 points but we are still well below the 88% floor our MDR technical file commits to across deployment environments. We have a dataset of around 14,000 labelled studies in total. Our constraint is that we cannot store scans outside the hospital network, so all additional training has to happen on-site or through federated methods. We need a reliable way to close this gap before our next hospital contract renewal in Q3 2025.",
+          "excerptSha256": "4f8641aeea205b9b549d81f2f0c383a4bb4b4aae206a22f24a18ba0d93e6466b",
+          "recordSha256": "01b95548a090825144b0a458956b3a3bb50df59ba524a7e32422e5ef9935eb57",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Our bone-fracture detection model hits 91% sensitivity on our test set, but when we deploy it at partner hospitals with older Siemens and Philips scanners, sensitivity drops to around 78% — we lose about 13 percentage points just from scanner-to-scanner variation in DICOM metadata and image reconstruction kernels.\nClearFrame Bone scores 91% sensitivity on our internal test set, which was built from scans collected on three mid-range Siemens and Philips machines at our main pilot site in Novi Sad. When we deploy at partner hospitals that run older scanner generations — mostly equipment installed before 2015 — sensitivity falls to around 78%. The gap comes from differences in how those scanners encode DICOM headers and apply reconstruction kernels during image processing. The resulting images look similar to the human eye but are statistically different enough to confuse our model. We have tried simple histogram normalisation and CLAHE preprocessing, and we collected roughly 1,200 additional scans from two partner sites to fine-tune on. The drop improved by about 3 points but we are still well below the 88% floor our MDR technical file commits to across deployment environments. We have a dataset of around 14,000 labelled studies in total. Our constraint is that we cannot store scans outside the hospital network, so all additional training has to happen on-site or through federated methods. We need a reliable way to close this gap before our next hospital contract renewal in Q3 2025.",
+      "queryTextSha256": "7e0fbd65f287c862c768b461a91c3c762fd27f487feda68f016966d481f07cf6",
+      "querySourceHash": "e149713dc06a40c17ad57deab00baa6c4a0f202cdb02490fdec9f1bafe371674"
+    },
+    {
+      "queryId": "q-C061-CH1-original",
+      "split": "holdout",
+      "companyId": "C061",
+      "challengeId": "C061-CH1",
+      "companyGroupId": "C061",
+      "variantGroupId": "C061-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C061",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/60"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Our cold-pressed pumpkin seed oil goes rancid within 4 months on shelf, but competitors manage 9–12 months; we lose about 15% of each batch to returns and we have no idea what oxidation pathway is hitting us fastest.",
+          "excerptSha256": "5df3a6faa2701f32eeb0ead611245e7916e653dedc238e7eaae44c434d166ec8",
+          "recordSha256": "0afce6207e25aa910727e43d909b616ef1164f2db230b676ef40c57ab11bdca2",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C061",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/60"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Our cold-pressed pumpkin seed oil hits a peroxide value above the acceptable threshold somewhere between three and five months after bottling, depending on the batch. We bottle into dark glass and we do a nitrogen flush, but the flush equipment is basic — a single nozzle above the fill point — and we are not sure how much residual oxygen we are actually leaving in the headspace. We have measured peroxide value on fresh oil and it is consistently below 5 meq/kg, which is fine, but by month four we are seeing values above 15. We have tried adding a small amount of rosemary extract as a natural antioxidant on two batches but saw no clear improvement. We do not have gas chromatography equipment and we have never done a fatty acid profile breakdown or a tocopherol content analysis in-house. Our lab technician, Vesna Marković, handles the routine checks but has no specialist oxidation training. We spend roughly 180,000 RSD per year on returned and written-off stock from this issue alone. A good outcome would be identifying the main oxidation pathway — whether it is enzymatic, photo-oxidative, or related to trace metals — and getting a clear set of process changes we can actually implement without buying major new equipment.",
+          "excerptSha256": "7d50284838cabcd917fac56fb1dcf72737763c86f335da31d14076b831cd39ae",
+          "recordSha256": "0afce6207e25aa910727e43d909b616ef1164f2db230b676ef40c57ab11bdca2",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Our cold-pressed pumpkin seed oil goes rancid within 4 months on shelf, but competitors manage 9–12 months; we lose about 15% of each batch to returns and we have no idea what oxidation pathway is hitting us fastest.\nOur cold-pressed pumpkin seed oil hits a peroxide value above the acceptable threshold somewhere between three and five months after bottling, depending on the batch. We bottle into dark glass and we do a nitrogen flush, but the flush equipment is basic — a single nozzle above the fill point — and we are not sure how much residual oxygen we are actually leaving in the headspace. We have measured peroxide value on fresh oil and it is consistently below 5 meq/kg, which is fine, but by month four we are seeing values above 15. We have tried adding a small amount of rosemary extract as a natural antioxidant on two batches but saw no clear improvement. We do not have gas chromatography equipment and we have never done a fatty acid profile breakdown or a tocopherol content analysis in-house. Our lab technician, Vesna Marković, handles the routine checks but has no specialist oxidation training. We spend roughly 180,000 RSD per year on returned and written-off stock from this issue alone. A good outcome would be identifying the main oxidation pathway — whether it is enzymatic, photo-oxidative, or related to trace metals — and getting a clear set of process changes we can actually implement without buying major new equipment.",
+      "queryTextSha256": "e7b9b6685f44ed39fa4213090ea54eb2f580b113b504d9dd3e19d4c8ff67c8c0",
+      "querySourceHash": "52366c9d6cf4b327f9f77f869b53dec810e15e4f8a22551049ac8ac26cd58096"
+    },
+    {
+      "queryId": "q-C112-CH1-original",
+      "split": "holdout",
+      "companyId": "C112",
+      "challengeId": "C112-CH1",
+      "companyGroupId": "C112",
+      "variantGroupId": "C112-CH1",
+      "variantKind": "original",
+      "languages": [
+        "en",
+        "sr-Latn"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "sourceFields": {
+        "text": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C112",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/111"
+            },
+            "fieldPointer": "/challenges/0/text",
+            "derivedRecordId": false
+          },
+          "value": "Our string inverters start clipping at about 11 AM on clear summer days even though total irradiance looks fine — we think partial shading from nearby structures is the root cause, but we have no reliable way to model exactly how a shadow moves across a non-flat roof and what that does to the I-V curve of each string throughout the day.",
+          "excerptSha256": "442dc189c1d84e7a6439d5b1aeee61e6eeddca0419951d45edbce00423996a8c",
+          "recordSha256": "e577a6d16cec59b2397cf693544de54b739a79c0fea9a2c82950337efba27db4",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        },
+        "detail": {
+          "source": {
+            "file": "data/companies.json",
+            "recordId": "C112",
+            "locator": {
+              "format": "json",
+              "jsonPointer": "/companies/111"
+            },
+            "fieldPointer": "/challenges/0/detail",
+            "derivedRecordId": false
+          },
+          "value": "Na nekoliko naših lokacija sa složenim krovovima — uglavnom industrijske hale sa ventilacionim kućištima, antenama i susednim objektima — primetili smo da string inverteri ulaze u clipping već oko 11 ujutru, i to čak i kada ukupna osunčanost prema piranometru izgleda normalno. Sumnjamo da delimično zasenčenje pojedinih modula u stringu drastično ruši ukupnu I-V karakteristiku, ali nemamo alat koji bi nam pokazao kako tačno senka nekog dimnjaka ili nadstrešnice putuje po kosom krovu u toku dana i šta to znači za svaki string posebno. U PVsystu smo pokušali da modelujemo senčenje, ali softver pretpostavlja ravne površine i ne može da uhvati dinamiku pokreta senke po složenoj geometriji krova. Imamo tlocrtne nacrte objekata i GPS koordinate svake lokacije. Nemamo resurse za skupu lidarsku snimku. Željeli bismo konkretan proračun — po satu, po stringu — koji bi nam rekao gde da presložimo nizove ili ugradimo optimizere, i to pre sledeće sezone.",
+          "excerptSha256": "dd3422f67dacc181c6556c61725106d625b65948d7b18128b3b4b2d2cf906ab4",
+          "recordSha256": "e577a6d16cec59b2397cf693544de54b739a79c0fea9a2c82950337efba27db4",
+          "sourceFileSha256": "68227d7b28c3a86a686d71caf0d764ad8448fd986c91ed17a96cee48ac64ca97"
+        }
+      },
+      "queryText": "Our string inverters start clipping at about 11 AM on clear summer days even though total irradiance looks fine — we think partial shading from nearby structures is the root cause, but we have no reliable way to model exactly how a shadow moves across a non-flat roof and what that does to the I-V curve of each string throughout the day.\nNa nekoliko naših lokacija sa složenim krovovima — uglavnom industrijske hale sa ventilacionim kućištima, antenama i susednim objektima — primetili smo da string inverteri ulaze u clipping već oko 11 ujutru, i to čak i kada ukupna osunčanost prema piranometru izgleda normalno. Sumnjamo da delimično zasenčenje pojedinih modula u stringu drastično ruši ukupnu I-V karakteristiku, ali nemamo alat koji bi nam pokazao kako tačno senka nekog dimnjaka ili nadstrešnice putuje po kosom krovu u toku dana i šta to znači za svaki string posebno. U PVsystu smo pokušali da modelujemo senčenje, ali softver pretpostavlja ravne površine i ne može da uhvati dinamiku pokreta senke po složenoj geometriji krova. Imamo tlocrtne nacrte objekata i GPS koordinate svake lokacije. Nemamo resurse za skupu lidarsku snimku. Željeli bismo konkretan proračun — po satu, po stringu — koji bi nam rekao gde da presložimo nizove ili ugradimo optimizere, i to pre sledeće sezone.",
+      "queryTextSha256": "58dd266652e91833593bff5500eb1211f13efcc2062e8c2727048db323f709ec",
+      "querySourceHash": "48feca4fcc04109cf3bcf0576a04c9386c765d16a261344cdebfa2f3f3f64aec"
+    }
+  ],
+  "hash": "8e3a8435cb3b4b112d7f0feb584d28a977a53771cb86433bbcb34c528fdf8927"
+}

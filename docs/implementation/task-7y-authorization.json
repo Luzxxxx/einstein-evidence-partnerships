@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "task": "Task7y",
+  "policyVersion": "task7y-user-2026-10-31-v1",
+  "authorizationId": "63cce149-3089-4551-8733-5beaa7bf961b",
+  "baselineFile": "docs/implementation/task-7y-baseline.json",
+  "baselineSha256": "355ba0aa3c1a8a29dd205718c0ad75d1fa1ccd8d5a37506a1462ad3255cd8ab6",
+  "baselineHead": "11ff1e460cff9749c3da458679b742136f021a75",
+  "candidateRoot": "docs/implementation/task-7y-live/candidates",
+  "globalAttemptFile": "docs/implementation/task-7y-live/attempt.json",
+  "storeRoot": "C:\\Users\\Louis\\AppData\\Local\\Temp\\einstein task7 critic JAZ3OK\\store",
+  "approvedRuntimeChanges": [
+    {
+      "file": "src/evaluation/protocol-probe-v4-plan.ts",
+      "beforeSha256": "9f774a86b1c9f7cd89e2b4d1be2a24de074f20fbc6ef0d16cbf7e74fa43d9a75"
+    },
+    {
+      "file": "dist/server/evaluation/protocol-probe-v4-plan.js",
+      "beforeSha256": "40e892c9eb0b5bfbf0f0bf816aa50bab71e74903155b6f03cca7e3683f3acd96"
+    },
+    {
+      "file": "src/evaluation/protocol-probe-worker-v4.ts",
+      "beforeSha256": "1831de2d1e84a0ae3a7f6a74d8b5c513199b8cb5283cac35c5f396a2a774bb46"
+    },
+    {
+      "file": "dist/server/evaluation/protocol-probe-worker-v4.js",
+      "beforeSha256": "165db88434d4e48ca9b7f6e9e2d3e7a4db6bc09023c371cc8a67640d25ef5199"
+    },
+    {
+      "file": "src/evaluation/v4-bounded-validation.ts",
+      "beforeSha256": "8c7cf9e73438e0ef5e6c460dbbe4ba05de4d0554bc06088ef77a8661502a2b19"
+    },
+    {
+      "file": "dist/server/evaluation/v4-bounded-validation.js",
+      "beforeSha256": "d11b134800a40ec53e954c84e33eaac01cd12f338dbf5921cd9dc323482c119d"
+    }
+  ],
+  "otherPermittedTrackedChanges": [
+    "scripts/verify-task7-processes.mjs",
+    ".planning/.active_plan"
+  ],
+  "protocolVersion": "protocol-probe-v4-staged",
+  "protocolContractSha256": "1a4e9c7edbbee00a8d11786f2cb0e009c52458fff40ba6367941c75f50d18536",
+  "limits": {
+    "runs": 1,
+    "maxGrantedRequests": 4,
+    "perContextRequests": 2,
+    "maxConcurrentRequests": 2,
+    "requestTimeoutMs": 40000,
+    "runTimeoutMs": 180000
+  },
+  "automaticRetry": false,
+  "preparationMayRepeatBeforeGlobalAttempt": true,
+  "executionMayRepeat": false,
+  "L05Authorized": false,
+  "batchAuthorized": false,
+  "Task8Authorized": false,
+  "recoveryApplyAuthorized": false,
+  "newRiskExceptionsAuthorized": false,
+  "globalAttemptConsumesAuthorizationEvenIfNoHTTP": true
+}

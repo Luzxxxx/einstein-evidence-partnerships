@@ -1,0 +1,14 @@
+import type { RevisionDiff } from '../types.js';
+import { sectionNames } from '../state.js';
+import { Finding } from './ReviewPanel.js';
+
+export function DecisionEvolution({ diff, onEvidence }: { diff: RevisionDiff | null; onEvidence: (id: string) => void }) {
+  if (!diff?.available) return <div className="inline-empty"><h2>No revision comparison yet</h2><p>Two saved draft versions are required. A revision is never created just for this view.</p></div>;
+  return <section className="reading-panel"><h2>How the draft changed</h2><p className="muted">Draft v{diff.from?.version} compared with v{diff.to?.version}. These are the saved texts, without rewriting.</p>
+    <div className="comparison-legend"><span className="badge neutral">Before</span><span className="badge active">After</span>{diff.laterApproval ? <span className="badge success">Later review bound to v{diff.to?.version}</span> : <span className="badge warning">No bound later approval</span>}</div>
+    {diff.findings?.length ? <section className="change-findings"><h3>What the first review challenged</h3>{diff.findings.map(f => <Finding key={f.id} finding={f} onEvidence={onEvidence} />)}<p className="small muted">A text change or later approval does not prove that every finding was resolved.</p></section> : null}
+    <h3>Claim comparison</h3>{diff.claims?.map(change => <article className="claim-comparison" key={change.id}><header><span className="id-text">{change.id}</span><span className="badge neutral">{change.change}</span></header><div className="comparison-grid"><section><h4>Before</h4><p>{change.before?.text ?? 'Not present in this version.'}</p>{change.before?.limitations.length ? <ul>{change.before.limitations.map((l, i) => <li key={i}>{l}</li>)}</ul> : null}</section><section><h4>After</h4><p>{change.after?.text ?? 'Not present in this version.'}</p>{change.after?.limitations.length ? <ul>{change.after.limitations.map((l, i) => <li key={i}>{l}</li>)}</ul> : null}</section></div></article>)}
+    <h3>Section comparison</h3>{diff.sections?.map(section => <details className="section-comparison" key={section.name}><summary>{sectionNames[section.name] ?? section.name} <span className="small muted">{section.changed ? 'Changed' : 'Unchanged'}</span></summary><div className="comparison-grid"><section><h4>Before</h4>{section.before?.length ? section.before.map((p, i) => <p key={i}>{p.text}</p>) : <p>Not present.</p>}</section><section><h4>After</h4>{section.after?.length ? section.after.map((p, i) => <p key={i}>{p.text}</p>) : <p>Not present.</p>}</section></div></details>)}
+    <details className="technical"><summary>Comparison bindings</summary><dl className="metadata"><dt>Before SHA-256</dt><dd>{diff.from?.hash}</dd><dt>After SHA-256</dt><dd>{diff.to?.hash}</dd><dt>Later review</dt><dd>{diff.laterApproval?.hash ?? 'Not available'}</dd></dl></details>
+  </section>;
+}

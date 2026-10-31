@@ -1,0 +1,264 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>C025:R0637</title><body><main><h1>C025 / R0637</h1><p>Challenge C025-CH1 · approved draft version 1</p><section><h2>summary</h2><p>R0637 is the best-supported candidate: her recorded work spans automated Gerber-based emission-risk rule checking, near-field-scan triage versus accredited OATS results, PDN impedance control and return-path discontinuity modelling, which maps onto Nexara&#39;s need to catch 150–450 MHz emission hotspots at layout review rather than after lab failure.</p><p>Claims: <a href="#C1">C1</a>, <a href="#C2">C2</a>, <a href="#C3">C3</a>, <a href="#C4">C4</a>, <a href="#C7">C7</a></p><p>The fit is partial and unverified on Nexara&#39;s hardware; the pilot is designed to test whether those methods actually discriminate Nexara&#39;s passing and failing boards before any checklist is released.</p><p>Claims: <a href="#C7">C7</a>, <a href="#C8">C8</a>, <a href="#C11">C11</a></p></section><section><h2>technicalRationale</h2><p>The rule-checker provides an early layout gate on Gerber/netlist geometry, while the published workflow adds near-field scanning and FDTD quantification only for flagged hotspots, matching Nexara&#39;s stated preference for a self-run workflow over per-board consultancy.</p><p>Claims: <a href="#C2">C2</a>, <a href="#C3">C3</a>, <a href="#C7">C7</a></p><p>PDN impedance and ground-plane moat findings give concrete physical mechanisms and candidate checks for the frequency band of interest, though each was validated on non-Nexara vehicles.</p><p>Claims: <a href="#C5">C5</a>, <a href="#C6">C6</a>, <a href="#C4">C4</a></p></section><section><h2>cooperationScope</h2><p>Contribution: retrospective triage of Nexara&#39;s five boards with the open rule-checker, PDN and return-path checks, targeted near-field scanning of flagged hotspots, and delivery of a documented layout checklist and simulation workflow with a worked example per failed board.</p><p>Claims: <a href="#C8">C8</a>, <a href="#C3">C3</a>, <a href="#C5">C5</a>, <a href="#C6">C6</a></p><p>Milestones (proposed, to confirm): data handover under NDA; baseline reproducibility check; retrospective scoring and hotspot analysis on the three failed boards; checklist draft reviewed with Nexara engineers; final workflow handover and training session.</p><p>Claims: <a href="#C8">C8</a>, <a href="#C10">C10</a></p></section><section><h2>validation</h2><p>Baseline: Nexara&#39;s current HyperLynx impedance checks plus in-house pre-compliance scans and the recorded 3-of-5 first-submission failure history. Measurements: per-board rule score versus known pass/fail, hotspot location agreement with pre-compliance/near-field data, and PDN impedance and moat-penalty indicators on flagged regions.</p><p>Claims: <a href="#C9">C9</a>, <a href="#C7">C7</a></p><p>Proposed go/no-go: release the checklist to Nexara engineers only if retrospective triage flags the known failures with a false-positive rate agreed in advance; otherwise revise or abandon. Track subsequent first-submission outcomes as the real test, without promising accredited-lab success.</p><p>Claims: <a href="#C9">C9</a>, <a href="#C11">C11</a></p></section><section><h2>constraints</h2><p>Required inputs: Gerber files, BOM/netlist and pre-compliance scan data for the five boards, plus the target class limits and frequency band, all under NDA.</p><p>Claims: <a href="#C10">C10</a>, <a href="#C8">C8</a></p><p>Participation conditions: work framed as contract research/EMC design-review collaboration; scanning bench available only on cost-recovery terms when teaching commitments permit; budget, lab hours and schedule are not established and must be agreed.</p><p>Claims: <a href="#C10">C10</a>, <a href="#C4">C4</a></p></section><section><h2>unknowns</h2><p>Open questions: which mechanisms dominate the three failures; whether HyperLynx workflows at Nexara can be reconfigured for emissions prediction or a separate FDTD route is needed; whether R0637&#39;s bench access and doctoral supervision load permit near-field scanning; and whether results transfer to the Budapest lab&#39;s class limits.</p><p>Claims: <a href="#C11">C11</a>, <a href="#C7">C7</a>, <a href="#C10">C10</a></p></section><section><h2>Claims, evidence and limitations</h2><article id="C1"><h3>C1 (fact)</h3><p>R0637&#39;s research profile is in electromagnetic compatibility, PCB radiation, signal integrity, pre-compliance EMI, FDTD modelling and near-field scanning, with a group that regularly uses a vector network analyser, near-field scanning bench and FDTD/MoM solvers.</p><ul><li>Profile text is self-described expertise; it does not by itself prove fit to Nexara&#39;s specific 150–450 MHz failures.</li><li>Evidence snapshot is not semantically assessed.</li></ul><p>Evidence: ev-ed9c681f50ded7b0245cbcf69ae6a2256740b55551a8a9a24a76f25630a4dfb8, ev-997334ae6eabcfe9f8e1a197abaf4be83290c7c697389a081bdd124903d113fc</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-ed9c681f50ded7b0245cbcf69ae6a2256740b55551a8a9a24a76f25630a4dfb8&quot;,
+    &quot;fieldPointer&quot;: &quot;/keywords&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-997334ae6eabcfe9f8e1a197abaf4be83290c7c697389a081bdd124903d113fc&quot;,
+    &quot;fieldPointer&quot;: &quot;/bio&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  }
+]</pre></article><article id="C2"><h3>C2 (fact)</h3><p>R0637 co-authored work on a rule-based PCB layout scoring tool that ingests Gerber files and a netlist, flags geometric emission-risk violations under 17 rules, and was validated on 23 boards of known emission performance with 83% sensitivity and 22% false-positive rate; the authors describe it as an early design gate, not a replacement for simulation or pre-compliance measurement.</p><ul><li>Validation was against CISPR 22 Class B results on 23 boards; not verified for Nexara&#39;s board types, frequency range or class limits.</li><li>Reported sensitivity/false-positive figures come from that study only and are not guaranteed to transfer.</li></ul><p>Evidence: ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097, ev-942f7e3d9f9dcfe0c1109937e295b73540a4c2118d2c6ce5b675ba2b1c88fb0c, ev-6fa4de4689a1c168165e9008e9dfac92a067c28d6397c69c5f1dd9d180dfcfe5</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-942f7e3d9f9dcfe0c1109937e295b73540a4c2118d2c6ce5b675ba2b1c88fb0c&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/3/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-6fa4de4689a1c168165e9008e9dfac92a067c28d6397c69c5f1dd9d180dfcfe5&quot;,
+    &quot;fieldPointer&quot;: &quot;/keywords&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  }
+]</pre></article><article id="C3"><h3>C3 (fact)</h3><p>R0637 co-authored an integrated pre-compliance workflow that sequences layout rule checking, near-field scanning at 3 mm standoff and FDTD simulation; across four prototype boards with two regional companies it identified the dominant emission source in each case, and corrective measures reduced peak radiated emission by 5.2–11.7 dB with 2.1 fewer test-and-rework cycles versus a historical baseline.</p><ul><li>Four-board sample developed with two partner companies; not Nexara&#39;s designs or Budapest lab.</li><li>Improvements were measured at the pre-compliance receiver, not formal OATS certification outcomes.</li></ul><p>Evidence: ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77, ev-fba5ebd9abfd4fc8aa8bd7627df2aae89331c6eca2d7956c8891d7777e5f4452, ev-79a3f7fc12ce8b59c3b5f033753fb337c89aad903f4480ca01ef830baca06ffb</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-fba5ebd9abfd4fc8aa8bd7627df2aae89331c6eca2d7956c8891d7777e5f4452&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-79a3f7fc12ce8b59c3b5f033753fb337c89aad903f4480ca01ef830baca06ffb&quot;,
+    &quot;fieldPointer&quot;: &quot;/title&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  }
+]</pre></article><article id="C4"><h3>C4 (fact)</h3><p>R0637 co-authored a study showing near-field scan data at 3 mm standoff gave 85% rank-ordering agreement with accredited 3 m OATS results at each board&#39;s emission maximum, with absolute amplitude within ±4.5 dB in 74% of cases, degrading to ±9 dB above 700 MHz; the authors frame it as early design triage, not a certification substitute.</p><ul><li>Seven consumer electronics boards; standoff and grid parameters matter and are not guaranteed to apply to Nexara&#39;s boards.</li><li>Accuracy stated is not a guarantee of passing accredited measurement.</li></ul><p>Evidence: ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8, ev-502aa568c315b42bbd6ba69ff9dd7c68687946c2c1d961eb656a8ed6cae9a29d</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07041&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07041&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-502aa568c315b42bbd6ba69ff9dd7c68687946c2c1d961eb656a8ed6cae9a29d&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07041&quot;
+  }
+]</pre></article><article id="C5"><h3>C5 (fact)</h3><p>R0637 co-authored measurement and simulation work on power delivery network impedance showing a distributed ceramic decoupling strategy reduced peak PDN impedance from 840 mΩ to 210 mΩ at 480 MHz and gave a 4.8 dB reduction in broadband radiated noise floor between 400 and 600 MHz on a test vehicle.</p><ul><li>Single FPGA/ADC test vehicle; results are design-specific and not a general PDN rule for Nexara&#39;s boards.</li><li>This addresses PDN-related emissions only, not the full 150–450 MHz failure space.</li></ul><p>Evidence: ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07, ev-3e4de8db8cd55ba4b296c94a49fd1d66ee8bd6ceaf940a48defc198eaf94c3f4</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07040&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07040&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-3e4de8db8cd55ba4b296c94a49fd1d66ee8bd6ceaf940a48defc198eaf94c3f4&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07040&quot;
+  }
+]</pre></article><article id="C6"><h3>C6 (fact)</h3><p>R0637 co-authored method-of-moments work showing a 1 mm ground-plane moat increased peak radiated field by 7.4 dB at 600 MHz without bridging, reduced to 1.8 dB with a single 100 nF bridging capacitor, with limits of the analytical approximation above 800 MHz.</p><ul><li>Canonical two-layer board with 50 Ω microstrip and 200 MHz clock; not a general prediction of arbitrary layouts.</li><li>Pertinent to return-path discontinuities, one of several possible mechanisms behind Nexara&#39;s failures.</li></ul><p>Evidence: ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb, ev-79d87bf0b48f4f5123cf76daa0664f797002c6d0a68a4c13dd09287687210c42</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07257&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07257&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-79d87bf0b48f4f5123cf76daa0664f797002c6d0a68a4c13dd09287687210c42&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07257&quot;
+  }
+]</pre></article><article id="C7"><h3>C7 (inference)</h3><p>Taken together, R0637&#39;s evidence supports building Nexara a repeatable pre-signoff emission-risk triage: an automated Gerber/netlist rule-score gate plus PDN and return-path checks, escalated to near-field scanning and FDTD only for flagged hotspots. That is a plausible route to catching hotspots during layout review, but the published accuracies are study-specific and the 150–450 MHz band and Nexara&#39;s class limits would need re-validation on Nexara&#39;s own five boards.</p><ul><li>None of the published validation used Nexara hardware or the Budapest accredited lab; transferability is unverified.</li><li>Evidence does not establish that any single tool explains all three failures.</li></ul><p>Evidence: ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097, ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77, ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07, ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb, ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07040&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07040&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07257&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07257&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07041&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07041&quot;
+  }
+]</pre></article><article id="C8"><h3>C8 (proposal)</h3><p>Proposed bounded pilot: (1) under NDA, retrospectively run the open rule-checker on Nexara&#39;s five boards&#39; Gerber files and netlists, comparing scores against known pass/fail and pre-compliance scan data; (2) for the three failed boards, apply PDN-impedance and return-path/moat checks to the flagged regions; (3) near-field scan only the identified hotspots at the faculty bench where access permits; (4) distill the discriminative checks into a documented layout checklist and a step-by-step simulation workflow for Nexara engineers to run themselves.</p><ul><li>Retrospective scoring on five boards is a small sample and may not be statistically conclusive.</li><li>Scanning bench access is cost-recovery and subject to faculty teaching commitments; timing cannot be promised.</li><li>If retrospective triage does not separate failing from passing boards, the checklist must be revised or the pilot stopped.</li></ul><p>Evidence: ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097, ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77, ev-5b1ca8b44cce44e6df533b05596e944ba47d1a25d909266ab748b7450ef0232a, ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07, ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb, ev-2e80694b62aaffdd97185b6f096c3ffe4273791ea5162105b1c0848814f1cbca, ev-a98863713ed3847d425c4a749e9f675480590cd3603294a38c93810f8ae65ab0</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-5b1ca8b44cce44e6df533b05596e944ba47d1a25d909266ab748b7450ef0232a&quot;,
+    &quot;fieldPointer&quot;: &quot;/summary&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PRJ-0366&quot;,
+    &quot;objectId&quot;: &quot;SYN-PRJ-0366&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d978b4c3a4369c08f18aef1378ccdfc622bcda76a776712a82043a34089cb07&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07040&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07040&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-670202703a8dd70bdc60b72719c4a0fb3a434410fe82800498213a97efe22fdb&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07257&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07257&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-2e80694b62aaffdd97185b6f096c3ffe4273791ea5162105b1c0848814f1cbca&quot;,
+    &quot;fieldPointer&quot;: &quot;/open_to&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-a98863713ed3847d425c4a749e9f675480590cd3603294a38c93810f8ae65ab0&quot;,
+    &quot;fieldPointer&quot;: &quot;/notes&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  }
+]</pre></article><article id="C9"><h3>C9 (proposal)</h3><p>Validation plan: baseline is Nexara&#39;s current process (HyperLynx impedance checks plus pre-compliance scans) and the historical 3-of-5 first-submission failure record; measurements would be retrospective pass/fail agreement of the rule score on the five boards in 150–450 MHz, hotspot location agreement with near-field scans, and residual PDN impedance/moat-penalty checks versus design intent. Proposed go/no-go: proceed to a prospective checklist release only if the retrospective triage flags the known failures with an acceptable false-positive rate agreed with Nexara; otherwise revise rules.</p><ul><li>Proposed thresholds and milestones are assumptions to confirm jointly, not source facts.</li><li>Historical baseline figures come from Nexara&#39;s own account and are not independently verified.</li><li>Pass criteria must not be framed as guaranteeing accredited-lab success.</li></ul><p>Evidence: ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097, ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8, ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07041&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07041&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  }
+]</pre></article><article id="C10"><h3>C10 (proposal)</h3><p>Participation constraints to confirm: Nexara provides Gerber files, BOM/netlist and pre-compliance scan data for the five boards under NDA; the work is framed as contract research on PCB EMC characterisation and pre-compliance testing. R0637&#39;s declared availability is contract research, EMC design-review consulting, joint academic–industrial projects and cost-recovery equipment access; she prefers longer-term projects with real hardware, and the two doctoral students defending in 2026–2027 may limit her time. Committed staff, lab hours and budget are not established here.</p><ul><li>No confirmed availability, budget or schedule for the scanning bench or FDTD licences.</li><li>Individual participation consent, NDA terms and data handling arrangements are unresolved.</li></ul><p>Evidence: ev-2e80694b62aaffdd97185b6f096c3ffe4273791ea5162105b1c0848814f1cbca, ev-a98863713ed3847d425c4a749e9f675480590cd3603294a38c93810f8ae65ab0, ev-b0842f300d0fd6d0df3960f8f5d1a7119798dbb88decd17744af72ba5ad8f837</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-2e80694b62aaffdd97185b6f096c3ffe4273791ea5162105b1c0848814f1cbca&quot;,
+    &quot;fieldPointer&quot;: &quot;/open_to&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-a98863713ed3847d425c4a749e9f675480590cd3603294a38c93810f8ae65ab0&quot;,
+    &quot;fieldPointer&quot;: &quot;/notes&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-b0842f300d0fd6d0df3960f8f5d1a7119798dbb88decd17744af72ba5ad8f837&quot;,
+    &quot;fieldPointer&quot;: &quot;/industry_experience&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  }
+]</pre></article><article id="C11"><h3>C11 (inference)</h3><p>Boundaries: the evidence covers radiated-emission prediction, PDN impedance, return-path discontinuities and near-field triage, which aligns with the 150–450 MHz failure mode, but it does not cover full HyperLynx-based emissions flow configuration, accredited CISPR class-limit sign-off, or every failure mechanism (e.g. cable/harness and enclosure effects) that can drive Budapest failures. Establishing that a checklist reduces re-test cost and delay is a prospective claim that must be verified within the company&#39;s own process.</p><ul><li>No evidence in this bundle about EMC labs, CISPR classes or failure mechanisms specific to Nexara.</li><li>Remaining requirements outside the tool&#39;s scope must be identified with Nexara during the pilot.</li></ul><p>Evidence: ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77, ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8, ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097, ev-997334ae6eabcfe9f8e1a197abaf4be83290c7c697389a081bdd124903d113fc</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-47e7a550e5d40d527ada7e62dbb8e6a527a1b9c0b7cde4716a7edbd27e38ce77&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01515&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01515&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-b01cc2ecd6f0db85d2f8b8c9e6df8e5d1a2be4cf69f2df46513c2a5ee52fdab8&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07041&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07041&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-0d07b731ba68bc5a58433d02b4fbca4f95f6350e82089d127b682cd182083097&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-07261&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-07261&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-997334ae6eabcfe9f8e1a197abaf4be83290c7c697389a081bdd124903d113fc&quot;,
+    &quot;fieldPointer&quot;: &quot;/bio&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0637&quot;,
+    &quot;objectId&quot;: &quot;R0637&quot;
+  }
+]</pre></article></section></main></body></html>

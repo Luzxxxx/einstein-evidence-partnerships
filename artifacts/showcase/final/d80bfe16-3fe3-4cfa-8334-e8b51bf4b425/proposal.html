@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>C105:R0123</title><body><main><h1>C105 / R0123</h1><p>Challenge C105-CH2 · approved draft version 1</p><section><h2>summary</h2><p>R0123 is a strong technical match for C105-CH2: a bioinformatics/HPC researcher with registered evidence on cloud cost modelling for alignment and variant-calling pipelines, Snakemake scatter–gather throughput improvement with concordance checks, and a documented industry optimisation engagement, aligned with the company&#39;s unprofiled but suspected alignment/calling bottlenecks.</p><p>Claims: <a href="#C1">C1</a>, <a href="#C3">C3</a>, <a href="#C4">C4</a>, <a href="#C5">C5</a>, <a href="#C6">C6</a></p></section><section><h2>technicalRationale</h2><p>The evidence covers the two likely levers: (a) cost-aware execution on spot/preemptible instances with checkpointing, and (b) parallelism/scatter–gather restructuring of alignment and calling stages, both with explicit accuracy-concordance measurements rather than speed alone.</p><p>Claims: <a href="#C3">C3</a>, <a href="#C4">C4</a>, <a href="#C6">C6</a></p><p>Project GENOMFLO develops a cost-aware orchestration layer and containerised alignment/variant-calling components for laboratories with limited bioinformatics staff, which resembles the company&#39;s two-person bioinformatics setup.</p><p>Claims: <a href="#C2">C2</a>, <a href="#C6">C6</a></p></section><section><h2>cooperationScope</h2><p>A time-boxed pilot (roughly 13 weeks) under contract research or consulting: a 4-week profiling and cost-model phase, a 4-week optimisation of alignment/calling parallelism and checkpointed spot execution, and a 4-week concordance validation and handover to the company&#39;s two bioinformatics staff.</p><p>Claims: <a href="#C7">C7</a>, <a href="#C8">C8</a>, <a href="#C10">C10</a></p></section><section><h2>validation</h2><p>Acceptance gates: per-rule profile before/after, compute cost per sample measured against provider billing, total batch wall time, and star-allele call concordance versus the current pipeline on retained ethics-approved samples, with clinical accuracy treated as a non-negotiable constraint.</p><p>Claims: <a href="#C7">C7</a>, <a href="#C8">C8</a></p><p>Concordance methodology should follow the cited practice of comparing against the existing baseline with precision/recall style metrics, not just timing.</p><p>Claims: <a href="#C4">C4</a>, <a href="#C8">C8</a></p></section><section><h2>constraints</h2><p>Reported cost and runtime gains derive from WGS/WES workloads and modelled spot markets; they are not guarantees for a targeted star-allele panel, and spot usage without checkpointing can increase effective cost.</p><p>Claims: <a href="#C3">C3</a>, <a href="#C4">C4</a>, <a href="#C8">C8</a></p><p>Collaboration preferences support contract research, consulting and joint projects; availability, fees, IP and data-processing agreements are not documented and must be agreed separately.</p><p>Claims: <a href="#C10">C10</a></p></section><section><h2>unknowns</h2><p>The company&#39;s actual per-step bottlenecks, instance types and billing detail are unmeasured, so the sub-3-EUR and under-90-minute targets remain untested hypotheses.</p><p>Claims: <a href="#C6">C6</a>, <a href="#C7">C7</a></p><p>Identity of co-authors and co-participants on the cited records is partly unresolved in the source data; no conclusions are drawn about their roles.</p><p>Claims: <a href="#C9">C9</a></p></section><section><h2>Claims, evidence and limitations</h2><article id="C1"><h3>C1 (fact)</h3><p>R0123&#39;s profile lists research fields Bioinformatics, High-Performance Computing, Genomics and Cloud Computing, with keywords including read alignment, variant calling, pipeline parallelisation and cloud cost optimisation.</p><ul><li>Profile self-description, not verified against project deliverables.</li></ul><p>Evidence: ev-54343b077a33e039b3a4a0b795a33ae0741442ddfdf57958b684a6accb6f84b8, ev-625978e55e235393f924c2e318d2719d442f8dbb4c303d42744eac77a938f3e5</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-54343b077a33e039b3a4a0b795a33ae0741442ddfdf57958b684a6accb6f84b8&quot;,
+    &quot;fieldPointer&quot;: &quot;/fields&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-625978e55e235393f924c2e318d2719d442f8dbb4c303d42744eac77a938f3e5&quot;,
+    &quot;fieldPointer&quot;: &quot;/keywords&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  }
+]</pre></article><article id="C2"><h3>C2 (fact)</h3><p>R0123 is a participant in project SYN-PRJ-0254 (GENOMFLO), which develops a cloud-cost-aware orchestration layer that dynamically chooses between on-premises HPC and spot-instance cloud execution based on queue state, sample priority and real-time cloud pricing, plus containerised alignment and variant-calling workflow components.</p><ul><li>Project summary describes planned pilot deployments at two regional clinical partners; no completed-deployment results are given in the evidence.</li></ul><p>Evidence: ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5, ev-5f1f974c5f0df9b942354f61a09d05cf882becdcd97f0825ff9f33df178b195e</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5&quot;,
+    &quot;fieldPointer&quot;: &quot;/summary&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PRJ-0254&quot;,
+    &quot;objectId&quot;: &quot;SYN-PRJ-0254&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-5f1f974c5f0df9b942354f61a09d05cf882becdcd97f0825ff9f33df178b195e&quot;,
+    &quot;fieldPointer&quot;: &quot;/participants/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;project_participant&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;SYN-PRJ-0254&quot;
+  }
+]</pre></article><article id="C3"><h3>C3 (fact)</h3><p>R0123 co-authored work building a cost model for WGS alignment and variant-calling pipelines that combines hourly spot price distributions from two cloud providers, mean time to interruption, and checkpoint overhead for BWA-MEM2 and GATK stages; naive spot use without checkpointing increased effective cost 18–34% in high-volatility markets, whereas a bidding-and-checkpoint strategy cut cost 41% on average versus on-demand in stable price periods.</p><ul><li>Modelled on WGS/WES cohorts at 10×–30× coverage, not on targeted short-read star-allele panels; transfer to a 24-sample panel batch is an assumption.</li><li>Pricing sampled over 90 days from two providers; results are sensitive to market volatility.</li></ul><p>Evidence: ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f, ev-127c213f3b14f099f76885e8f4d49b21e3dc6379799d497ca809e517dd364441, ev-e2936af7872e400217df9e2d304f79c3990e5532e132eda75307dfdb3afc7aa8</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-127c213f3b14f099f76885e8f4d49b21e3dc6379799d497ca809e517dd364441&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/0/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-e2936af7872e400217df9e2d304f79c3990e5532e132eda75307dfdb3afc7aa8&quot;,
+    &quot;fieldPointer&quot;: &quot;/keywords&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  }
+]</pre></article><article id="C4"><h3>C4 (fact)</h3><p>R0123 co-authored a study on Snakemake/SLURM orchestration for GATK HaplotypeCaller, where genomic-interval scatter–gather reduced mean per-sample runtime from 4.1 hours to 41 minutes on 32 cores, with SNP precision 99.91%/recall 99.87% and indel precision 99.34%/recall 99.21% against the baseline on GIAB variants.</p><ul><li>WES cohort at mean 85× coverage; the accuracy comparison is concordance with the authors&#39; own baseline, not an independent clinical validation.</li></ul><p>Evidence: ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020, ev-6d8d59a890ebaab690cdd83583375e0c20744530a7560717c74f0deddebb53fc</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01614&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-6d8d59a890ebaab690cdd83583375e0c20744530a7560717c74f0deddebb53fc&quot;,
+    &quot;fieldPointer&quot;: &quot;/authors/3/researcher_id&quot;,
+    &quot;relation&quot;: &quot;author_of&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  }
+]</pre></article><article id="C5"><h3>C5 (fact)</h3><p>R0123 has documented industry experience: a 2023 three-month consulting engagement with a Novi Sad health-tech startup auditing and optimising a cloud-based WES pipeline, reportedly reducing per-sample cloud spend by about 35%.</p><ul><li>Self-reported profile field; no client reference, baseline figures or independent verification in the evidence.</li></ul><p>Evidence: ev-226e5222e55fdfeb9a9aa56e0f49f3737b4529536d32a22e8158d3bfed47f3f4</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-226e5222e55fdfeb9a9aa56e0f49f3737b4529536d32a22e8158d3bfed47f3f4&quot;,
+    &quot;fieldPointer&quot;: &quot;/industry_experience&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  }
+]</pre></article><article id="C6"><h3>C6 (inference)</h3><p>Because the company&#39;s bottlenecks are unprofiled but suspected in alignment and star-allele calling, R0123&#39;s combination of alignment-parallelisation work, scatter–gather throughput evaluation and spot/checkpoint cost modelling maps onto the primary levers likely needed to move from 9 EUR/sample toward below 3 EUR/sample.</p><ul><li>Neither the company nor R0123 has measured this specific pipeline; mapping is by analogy from other WGS/WES pipelines.</li><li>Explicitly a hypothesis until per-step profiling is done.</li></ul><p>Evidence: ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020, ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f, ev-756362a0e60229f6e2fa04f25c74f98b4647f4985d053fae0527384acb43b07d, ev-10ea081c1d4ce5d21da7b366caba15ed185c103fa10706ccbc59178341f15d0c</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01614&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-756362a0e60229f6e2fa04f25c74f98b4647f4985d053fae0527384acb43b07d&quot;,
+    &quot;fieldPointer&quot;: &quot;/title&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01612&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01612&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-10ea081c1d4ce5d21da7b366caba15ed185c103fa10706ccbc59178341f15d0c&quot;,
+    &quot;fieldPointer&quot;: &quot;/bio&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  }
+]</pre></article><article id="C7"><h3>C7 (proposal)</h3><p>A first, bounded pilot: instrument the existing Snakemake pipeline to produce per-rule wall-time, CPU-hour and I/O profiles on two 24-sample batches, then build a per-sample cost model calibrated to the company&#39;s actual provider pricing and instance families, before any code optimisation.</p><ul><li>Requires access to the company&#39;s cloud billing data and pipeline configuration, which are not in the evidence.</li><li>Cost-model outputs depend on provider price volatility during the pilot window.</li></ul><p>Evidence: ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f, ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020, ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01614&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5&quot;,
+    &quot;fieldPointer&quot;: &quot;/summary&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PRJ-0254&quot;,
+    &quot;objectId&quot;: &quot;SYN-PRJ-0254&quot;
+  }
+]</pre></article><article id="C8"><h3>C8 (proposal)</h3><p>Targeted optimisation phase using interval scatter–gather and sample-level parallelism for the alignment and calling stages, plus checkpointed spot/preemptible execution guided by the cost model, with concordance against the current calls measured on retained clinical samples as the accuracy gate for the under-90-minute and sub-3-EUR goals.</p><ul><li>Runtime and cost reductions reported in the cited studies were obtained on WGS/WES workloads, not on a targeted star-allele panel; gains may be smaller.</li><li>Effort assumes a 13-week pilot at the modest pace the proposer assigns, i.e. a 4-week plan, monitoring and a 4-week optimisation phase, with a 4-week accuracy-validation and handover period.</li><li>Spot-instance strategies carry interruption risk and require checkpointing to avoid cost regressions.</li></ul><p>Evidence: ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020, ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f, ev-b883d6b162209ccffcea999a4f248970d03cc2988f8946f05ca2ee73c3871e94</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01614&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-b883d6b162209ccffcea999a4f248970d03cc2988f8946f05ca2ee73c3871e94&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01617&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01617&quot;
+  }
+]</pre></article><article id="C9"><h3>C9 (inference)</h3><p>R0123 participates in the GENOMFLO project (SYN-PRJ-0254) alongside other listed participants, and co-authored the cited publications with additional authors whose identities are unresolved in the source data; no assumption is made about those authors&#39; affiliation or endorsement of this proposal.</p><ul><li>Unresolved participant records mean co-author identities cannot be confirmed.</li><li>No affiliation or conflict-of-interest information beyond the profile is available.</li></ul><p>Evidence: ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5, ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f, ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-c7e8de2c805b759e633e2f6328735e9f087252e1884af5370d37272fa10162f5&quot;,
+    &quot;fieldPointer&quot;: &quot;/summary&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PRJ-0254&quot;,
+    &quot;objectId&quot;: &quot;SYN-PRJ-0254&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-17eb6d3e27a3376b2f2e3e4d515dba94c575628055a59c5a949a8afe31768b2f&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01615&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01615&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-386ebffa1089ce50395b10e140c2bf00d9432f00b34aeb4c55f9d96b8cbee020&quot;,
+    &quot;fieldPointer&quot;: &quot;/abstract&quot;,
+    &quot;relation&quot;: &quot;source_field&quot;,
+    &quot;subjectId&quot;: &quot;SYN-PUB-01614&quot;,
+    &quot;objectId&quot;: &quot;SYN-PUB-01614&quot;
+  }
+]</pre></article><article id="C10"><h3>C10 (fact)</h3><p>R0123&#39;s stated collaboration preferences are joint projects, contract research, consulting and student internships, and prefers partnerships with organisations facing concrete genomic cost or throughput constraints over theoretical or database-curation work.</p><ul><li>Preferences are profile statements; actual availability, fees and any institutional IP constraints are not documented.</li></ul><p>Evidence: ev-730c8d9381c57c0bd5c7a3f5044e4621d32878f8022ab5fcef6c0158c7fd7baa, ev-51a912e3c4cc6026d4b2e03aa571708f3b6c2b9c32a275d354e47e28c4bfe9db</p><pre>[
+  {
+    &quot;evidenceId&quot;: &quot;ev-730c8d9381c57c0bd5c7a3f5044e4621d32878f8022ab5fcef6c0158c7fd7baa&quot;,
+    &quot;fieldPointer&quot;: &quot;/open_to&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  },
+  {
+    &quot;evidenceId&quot;: &quot;ev-51a912e3c4cc6026d4b2e03aa571708f3b6c2b9c32a275d354e47e28c4bfe9db&quot;,
+    &quot;fieldPointer&quot;: &quot;/notes&quot;,
+    &quot;relation&quot;: &quot;profile_field&quot;,
+    &quot;subjectId&quot;: &quot;R0123&quot;,
+    &quot;objectId&quot;: &quot;R0123&quot;
+  }
+]</pre></article></section></main></body></html>
