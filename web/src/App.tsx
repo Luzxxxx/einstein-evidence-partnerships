@@ -8,7 +8,7 @@ import { Showcase } from './components/Showcase.js';
 import { History } from './components/History.js';
 import { BrandMark, Icon } from './components/Icons.js';
 import './styles.css';
-import { savedDemo } from './saved-demo.js';
+import { savedDemo, demoAssetPath } from './saved-demo.js';
 
 function readRoute() {
   const hash = window.location.hash.slice(1);
@@ -59,7 +59,7 @@ export default function App() {
       .finally(() => { if (!controller.signal.aborted) setShowcaseLoading(false); });
     return () => controller.abort();
   }, [route.page, reload]);
-  useEffect(() => { document.title = route.page === 'run' ? 'Run | EINSTEIN' : route.page === 'showcase' ? 'Proposals | EINSTEIN' : route.page === 'replay' ? 'History | EINSTEIN' : 'Research workspace | EINSTEIN'; }, [route.page]);
+  useEffect(() => { document.title = route.page === 'run' ? 'Run | ProofBridge' : route.page === 'showcase' ? 'Proposals | ProofBridge' : route.page === 'replay' ? 'History | ProofBridge' : 'Research workspace | ProofBridge'; }, [route.page]);
   useEffect(() => {
     setMobileControlsOpen(false);
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -75,8 +75,8 @@ export default function App() {
   };
   return <>
     <a className="skip-link" href="#main-content" onClick={e => { e.preventDefault(); document.getElementById('main-content')?.focus(); }}>Skip to content</a>
-    <header className="app-header"><a href={savedDemo ? '#showcase' : '#analyze'} className="brand" aria-label="EINSTEIN home"><BrandMark /><span><strong>EINSTEIN</strong><span>Science to business</span></span></a><nav className="main-nav" aria-label="Main navigation">{!savedDemo ? <a className={route.page === 'analyze' || route.page === 'run' ? 'selected' : ''} href="#analyze">Analyze</a> : null}<a className={route.page === 'showcase' ? 'selected' : ''} href="#showcase">Proposals<span className="nav-count">{showcase.length}</span></a><a className={route.page === 'replay' ? 'selected' : ''} href="#replay">History</a>{savedDemo ? <a href="/guide.html">How it works</a> : null}</nav><span className="local-label"><span className={`status-dot ${catalogError ? 'error' : loading ? 'neutral' : 'success'}`} />{catalogError ? 'Service unavailable' : savedDemo ? 'Saved demo' : 'Local workspace'}</span></header>
-    {savedDemo ? <div className="saved-demo-note"><span>Explore real saved results. No API key needed.</span><a href="/guide.html">Run your own analysis <Icon name="arrow" size={14} /></a></div> : null}
+    <header className={`app-header${savedDemo ? ' proof-header' : ''}`}><a href={savedDemo ? '#showcase' : '#analyze'} className="brand" aria-label="ProofBridge home"><BrandMark /><span><strong>ProofBridge</strong><span>Science to business</span></span></a><nav className="main-nav" aria-label="Main navigation">{!savedDemo ? <a className={route.page === 'analyze' || route.page === 'run' ? 'selected' : ''} href="#analyze">Analyze</a> : null}<a className={route.page === 'showcase' ? 'selected' : ''} href="#showcase">Proposals<span className="nav-count">{showcase.length}</span></a><a className={route.page === 'replay' ? 'selected' : ''} href="#replay">History</a>{savedDemo ? <a href={demoAssetPath('guide.html')}>How it works</a> : null}</nav><span className="local-label"><span className={`status-dot ${catalogError ? 'error' : loading ? 'neutral' : 'success'}`} />{catalogError ? 'Service unavailable' : savedDemo ? 'Saved demo' : 'Local workspace'}</span></header>
+    {savedDemo ? <div className="saved-demo-note"><span>Explore real saved results. No API key needed.</span><a href={demoAssetPath('guide.html')}>Run your own analysis <Icon name="arrow" size={14} /></a></div> : null}
     <div className={`app-layout ${savedDemo ? 'saved-demo-layout' : ''} ${route.page !== 'analyze' ? 'reading-view' : ''} ${mobileControlsOpen ? 'controls-open' : ''}`}>
     {!savedDemo && route.page !== 'analyze' ? <button className="mobile-controls-toggle" aria-expanded={mobileControlsOpen} aria-controls="analysis-controls" onClick={() => setMobileControlsOpen(v => !v)}><Icon name="search" size={16} />{mobileControlsOpen ? 'Hide analysis controls' : 'Show analysis controls'}</button> : null}
     {!savedDemo ? <aside className="sidebar" id="analysis-controls" aria-label="Analysis controls">

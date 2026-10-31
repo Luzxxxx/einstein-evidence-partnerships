@@ -4,11 +4,11 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {stripTypeScriptTypes} from 'node:module';
 
-async function adapter(enabled) {
-  const source=(await readFile('web/src/saved-demo.ts','utf8')).replaceAll('import.meta.env.VITE_SAVED_DEMO',JSON.stringify(String(enabled)));
+async function adapter(enabled, base='/') {
+  const source=(await readFile('web/src/saved-demo.ts','utf8')).replaceAll('import.meta.env.VITE_SAVED_DEMO',JSON.stringify(String(enabled))).replaceAll('import.meta.env.BASE_URL',JSON.stringify(base));
   const code=stripTypeScriptTypes(source).replaceAll('export ', '')+'\nexports.installSavedDemo = installSavedDemo;';
   const calls=[],routes={'/api/runs/example/events':{file:'events.txt',contentType:'text/event-stream',status:200}};
-  const native=async(input)=>{calls.push(String(input));return String(input)==='/demo-data/manifest.json'?Response.json({routes}):new Response('event: run-event\n\ndata: saved\n\n');};
+  const native=async(input)=>{calls.push(String(input));return String(input)===`${base}demo-data/manifest.json`?Response.json({routes}):new Response('event: run-event\n\ndata: saved\n\n');};
   const window={location:{href:'https://example.test/',origin:'https://example.test'},fetch:native};
   const context={exports:{},window,URL,Request,Response}; vm.runInNewContext(code,context);
   context.exports.installSavedDemo(); return{window,calls,native};
@@ -27,4 +27,19 @@ test('public demo preserves the saved event-stream media type',async()=>{
 });
 test('normal local build retains its original fetch with no demo manifest request',async()=>{
   const {window,calls,native}=await adapter(false);assert.equal(window.fetch,native);assert.deepEqual(calls,[]);
+});
+
+test('repository-hosted demo loads its manifest and real event payload beneath the project base',async()=>{
+  const {window,calls}=await adapter(true,'/einstein-evidence-partnerships/');
+  const response=await window.fetch('/api/runs/example/events');
+  assert.equal(response.status,200);assert.equal(response.headers.get('content-type'),'text/event-stream');
+  assert.match(await response.text(),/saved/);
+  assert.deepEqual(calls,['/einstein-evidence-partnerships/demo-data/manifest.json','/einstein-evidence-partnerships/demo-data/events.txt']);
+});
+
+test('repository-hosted demo still rejects model writes and absent evidence without forwarding',async()=>{
+  const {window,calls}=await adapter(true,'/einstein-evidence-partnerships/');
+  assert.equal((await window.fetch('/api/runs',{method:'POST',body:'{}'})).status,405);
+  assert.equal((await window.fetch('/api/runs/example/evidence/missing')).status,404);
+  assert.deepEqual(calls,['/einstein-evidence-partnerships/demo-data/manifest.json']);
 });
