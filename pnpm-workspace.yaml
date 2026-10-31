@@ -1,7 +1,0 @@
-# Project-local policy; no global settings are changed.
-minimumReleaseAge: 1440
-minimumReleaseAgeExclude:
-  - '@mozaik-ai/core@4.2.0'
-verifyDepsBeforeRun: error
-strictDepBuilds: true
-blockExoticSubdeps: true

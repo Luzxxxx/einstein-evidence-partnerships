@@ -1,0 +1,19 @@
+{
+  "mode": "saved_real_results",
+  "base": "/einstein-evidence-partnerships/",
+  "verifiedRoutes": 545,
+  "runIds": [
+    "447ecc18-ef58-4fd9-bae3-d36807fdbd3e",
+    "4f61dda1-5656-43ec-b84a-26aa80abd541",
+    "961b4dc2-9c85-49b8-84b9-910327832705",
+    "b59a56d7-c18d-41df-957e-f911d06174cc",
+    "cd38361e-fda0-438e-9820-bcd4acb7cbdb",
+    "d66da659-7683-4511-917f-38a9bbfefca2",
+    "d80bfe16-3fe3-4cfa-8334-e8b51bf4b425",
+    "b738ce31-0d8d-4eba-a01e-f4deac26a632",
+    "0fc75288-4d8b-4f0a-bee1-62f19834a8fd"
+  ],
+  "newModelRequests": 0,
+  "sourceDownload": "public GitHub main archive",
+  "previousSiteUnmodified": true
+}
