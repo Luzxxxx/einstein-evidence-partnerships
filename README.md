@@ -1,8 +1,8 @@
-# EINSTEIN — Evidence-backed Partnerships
+# ProofBridge — Evidence-backed Research Partnerships
 
 Turn a company challenge into a research partnership you can inspect: the source, the objections, the proposed pilot, and the review that allowed publication.
 
-**[Open the interactive demo](https://einstein-evidence-partnerships.clearbread14.chatgpt.site)** · [Architecture](docs/architecture.md) · [Three proposals](artifacts/showcase/final/index.html) · [Demo walkthrough](docs/demo-walkthrough.md)
+**[Open the interactive demo](https://luzxxxx.github.io/einstein-evidence-partnerships/)** · [Demo guide](https://luzxxxx.github.io/einstein-evidence-partnerships/guide.html) · [Architecture](docs/architecture.md) · [Three proposals](artifacts/showcase/final/index.html) · [Demo walkthrough](docs/demo-walkthrough.md)
 
 ![Three reviewed partnerships](docs/images/proposals.png)
 
