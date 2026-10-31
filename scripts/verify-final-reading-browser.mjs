@@ -37,6 +37,9 @@ try{
 
   if(!localService){
   await navigate('#showcase','Start with a real decision.');
+  // The reading guide is static; public proposal data arrives independently.
+  // Wait for the real cards rather than treating the initial loading frame as a result.
+  await until(async()=>await evaluate("document.querySelectorAll('.proposal-card').length===3"));
   check('homepage has three actual proposals',await evaluate("document.querySelectorAll('.proposal-card').length===3"));
   check('home reading path has three steps',await evaluate("document.querySelectorAll('.reading-steps li').length===3"));
   await capture('01-home.png');await evaluate("document.querySelector('.reading-guide').scrollIntoView({block:'start'})");await capture('02-judge-reading-path.png');
