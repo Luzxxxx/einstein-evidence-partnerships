@@ -4,7 +4,18 @@ Turn a company challenge into a research partnership you can inspect: the source
 
 **[Open the interactive demo](https://luzxxxx.github.io/einstein-evidence-partnerships/)** · [Demo guide](https://luzxxxx.github.io/einstein-evidence-partnerships/guide.html) · [Architecture](docs/architecture.md) · [Three proposals](artifacts/showcase/final/index.html) · [Demo walkthrough](docs/demo-walkthrough.md)
 
-![Three reviewed partnerships](docs/images/proposals.png)
+![ProofBridge — find research partnerships and inspect the evidence](docs/images/home.png)
+
+<details>
+<summary>See the proposal, Critic revision and evidence inspector</summary>
+
+![A real approved partnership proposal](docs/images/proposal-overview.png)
+
+![Before and after a Critic-requested revision; this research Run ends with insufficient evidence](docs/images/critic-revision.png)
+
+![Original-source evidence inspector](docs/images/evidence-inspector.png)
+
+</details>
 
 The public demo replays real saved model runs. It needs no API key. New analysis runs locally with your own provider key; browser-based key entry is not yet implemented.
 
@@ -39,6 +50,16 @@ For a new analysis, stop the demo, copy `config/gateway.env.example` to `.env.lo
 ```powershell
 node --env-file-if-exists=.env.local dist/server/server/main.js
 ```
+
+The API configuration entry is the local server's `.env.local` file. Its format is:
+
+```dotenv
+EINSTEIN_GATEWAY_API_KEY=YOUR_OWN_API_KEY
+EINSTEIN_GATEWAY_BASE_URL=https://api.deepseek.com
+EINSTEIN_GATEWAY_MODEL=deepseek-flash
+```
+
+Use the model identifier enabled for your provider account. The example matches the saved live-run configuration; another identifier or provider needs compatibility verification. The GitHub Pages demo only reads saved results; it does not offer a browser API-key form or start new model requests.
 
 Keys remain local to the server. Never put a key in frontend source or commit `.env.local`. The tested live provider was DeepSeek with the OpenAI-compatible chat protocol. Other providers require compatibility verification. Model calls consume the configured account's quota.
 
@@ -81,6 +102,8 @@ The three formal saved runs contain real client-side request overlap of approxim
 A future network adapter would accept a consented company challenge and return the structured pair, proposed pilot, evidence references and review state. Human acceptance, pilot completion and verified collaboration outcomes could become network events. Stars could reward verified contributions or completed collaboration milestones under the network's rules. This prototype does **not** implement a network API or assign a person's worth, reputation or Stars score. Retrieval orders evidence-supported candidates for a challenge; it is not a ranking of human value.
 
 ## Verification and limits
+
+[Latest GitHub Pages and screenshot verification](docs/github-pages-verification.md) covers this public visual refresh.
 
 `pnpm test:offline` builds and runs the engineering suite without model requests. Windows process fixtures are explicitly labelled. The development suite recorded 1,322 passing tests; this public release adds portable historical fixtures and is verified separately in [release verification](docs/release-verification.md). High default test parallelism previously produced a native Node crash of unknown cause; bounded test-file concurrency is available in the verification instructions.
 
