@@ -9,10 +9,10 @@ import { History } from './components/History.js';
 import { BrandMark, Icon } from './components/Icons.js';
 import './styles.css';
 import { savedDemo, demoAssetPath } from './saved-demo.js';
+import { readRouteHash } from './reading.js';
 
 function readRoute() {
-  const hash = window.location.hash.slice(1);
-  return hash.startsWith('run=') ? { page: 'run', id: hash.slice(4) } : { page: hash === 'showcase' ? 'showcase' : hash === 'replay' ? 'replay' : savedDemo ? 'showcase' : 'analyze', id: '' };
+  return readRouteHash(window.location.hash, savedDemo);
 }
 
 function ReplayForm({ compact = false }: { compact?: boolean }) {
@@ -86,7 +86,7 @@ export default function App() {
       <footer className="sidebar-footer"><Icon name="book" size={16} /><span>Official synthetic dataset<br /><span className="small">Evidence remains traceable to its source.</span></span></footer>
     </aside> : null}
     <main id="main-content" className="main-content" tabIndex={-1}>
-      {route.page === 'run' ? <RunWorkspace key={route.id} runId={route.id} catalog={catalog} onSeen={onSeen} /> : null}
+      {route.page === 'run' ? <RunWorkspace key={`${route.id}:${route.view}`} runId={route.id} initialView={route.view} catalog={catalog} onSeen={onSeen} /> : null}
       {route.page === 'showcase' ? <Showcase entries={showcase} catalog={catalog} loading={showcaseLoading} error={showcaseError} onRetry={() => setReload(n => n + 1)} /> : null}
       {route.page === 'replay' ? <section className="page-content replay-page"><div className="page-heading"><div><h1>Analysis history</h1><p>Revisit the evidence, decisions and next steps.</p></div></div><History catalog={catalog} /><details className="history-lookup"><summary>Open an older run by ID</summary><ReplayForm /></details></section> : null}
       {route.page === 'analyze' ? <section className="page-content analyze-page"><div className="page-heading"><div><h1>Find a research partner.</h1><p>Match a company challenge with research, evidence and a pilot plan.</p></div></div>

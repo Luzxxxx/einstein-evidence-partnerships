@@ -1,0 +1,46 @@
+✔ public demo never forwards POST or missing API routes to a live backend (52.4797ms)
+(node:29228) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ public demo preserves the saved event-stream media type (5.035ms)
+✔ normal local build retains its original fetch with no demo manifest request (2.6769ms)
+✔ repository-hosted demo loads its manifest and real event payload beneath the project base (2.3696ms)
+✔ repository-hosted demo still rejects model writes and absent evidence without forwarding (1.9308ms)
+✔ reading review requires exact Run and every available draft binding (0.6041ms)
+✔ meeting brief retains all exact original paragraphs, sources and missing sections without mutation (0.5234ms)
+✔ review story associates exact Claim IDs and retains limitation-only changes (0.2269ms)
+✔ missing comparisons and run-level findings do not invent a changed claim or resolution (0.0948ms)
+✔ reading deep links select only known views and never specify an action or execution mode (0.2305ms)
+✔ later review display requires current Run and exact v2 draft bindings for all verdicts (0.1614ms)
+✔ approved meeting brief binds the actual overview draft, accepted review and parent publication (0.0873ms)
+✔ saved collection search finds actual company, researcher, ID and original challenge text (1.0105ms)
+✔ saved collection search preserves order and empty states without inventing matches (0.5886ms)
+✔ a held service marks an unfinished run interrupted without changing its stored status or completed results (0.6606ms)
+✔ failed answers remain failed, with a concise primary message and no insufficient substitution (0.1319ms)
+✔ a model approval or cleanup event cannot publish; only the bound parent record and publication can (0.1256ms)
+✔ diagnostic and fixture labels stay separate from formal publication (0.0802ms)
+✔ events deduplicate and reject gaps, cross-Run packets and mutated duplicate identities (1.0437ms)
+✔ stale snapshots and ended Run status cannot reopen or replace the current Run (0.1305ms)
+✔ request intervals bind the complete actor and request, and never invent a missing end (0.1776ms)
+✔ evidence highlighting uses code points and never changes the source to make an excerpt fit (0.5022ms)
+✔ missing or failed artifact reads are not treated as proof that no proposal was published (0.1207ms)
+✔ old answer failures remain unknown while new persisted validation details keep their actual actor and stage (0.2086ms)
+✔ storage hold ends replay of persisted events without pretending terminality or retrying forever (16.3558ms)
+✔ a held partial stream reports missing saved events and accepts a later terminal record (0.3709ms)
+✔ a failed held-state refresh does not restart SSE or infer a successful terminal outcome (0.514ms)
+✔ actual SSE parsing handles UTF-8 chunks, comments and CRLF without duplicate delivery (5.8832ms)
+✔ a packet ID or Run mismatch and a sequence gap fail before rendering the event (0.8407ms)
+✔ a truncated or oversized packet is not silently converted into success (2.2696ms)
+✔ EOF always checks authoritative GET, and a terminal Run never reconnects (0.3764ms)
+✔ active reconnect sends exact Last-Event-ID and never POSTs or reruns (0.393ms)
+✔ stream errors check GET and stop if terminal; missing observation is not approval (0.19ms)
+✔ navigation abort cancels an open reader and does not fetch another stream (0.446ms)
+✔ an interrupted terminal replay remains visibly incomplete instead of clearing its warning (3.927ms)
+✔ clean EOF with fewer events than the saved lastSeq is also incomplete, not a complete replay (0.3641ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 192.7918

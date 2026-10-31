@@ -1,0 +1,23 @@
+.reading-guide { margin: 0 0 42px; padding: 30px 0 33px; border-top: 1px solid #e3e8e7; border-bottom: 1px solid #e3e8e7; color: #172b32; }
+.reading-guide-heading h2 { font-size: 26px; letter-spacing: -.03em; }
+.reading-guide-heading p { font-size: 14px; color: #586a72; margin-top: 9px; max-width: 70ch; }
+.reading-steps { list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; padding: 26px 0 0; margin: 0; }
+.reading-steps li { min-width: 0; padding-left: 0; }
+.reading-step-number { display: inline-flex; align-items: center; justify-content: center; width: 29px; height: 29px; border-radius: 50%; background: #e2f2ff; font-size: 13px; font-weight: 650; margin-bottom: 12px; }
+.reading-steps li:nth-child(2) .reading-step-number { background: #def1e4; }.reading-steps li:nth-child(3) .reading-step-number { background: #efe7fc; }
+.reading-steps h3 { font-size: 17px; }.reading-steps p { font-size: 13px; color: #586a72; margin-top: 8px; line-height: 1.75; max-width: 45ch; }
+.reading-steps a { display: inline-block; margin-top: 15px; color: #155f73; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.reading-guide-note { font-size: 12px; color: #586a72; margin-top: 27px; }
+.meeting-context { padding: 20px 24px; background: #edf6fc; border-radius: 12px; margin-top: 22px; }.meeting-context h3 { font-size: 15px; }.meeting-context > p { font-size: 15px; margin-top: 9px; line-height: 1.7; }.meeting-context details { margin-top: 12px; font-size: 13px; }.meeting-context details p { margin-top: 10px; line-height: 1.8; }
+.meeting-intro { margin-top: 11px; font-size: 13px; color: #526771; max-width: 72ch; line-height: 1.75; }
+.meeting-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }.meeting-nav a { border: 1px solid #cbd9df; color: #245d70; border-radius: 30px; padding: 7px 12px; font-size: 12px; text-decoration: none; }.meeting-nav a:hover { background: #eff6f9; }
+.meeting-approved-note { margin-top: 20px; padding: 16px 20px; border-left: 3px solid #62987c; background: #f0f7f3; font-size: 13px; }.meeting-approved-note p { margin-top: 6px; line-height: 1.7; color: #425b50; }
+.meeting-section { scroll-margin-top: 22px; }.meeting-section > h3 { font-size: 19px; }
+.meeting-open-questions { padding: 20px 24px; background: #fff9ef; border-radius: 10px; }.meeting-open-questions .brief-paragraph { font-size: 13px; }
+.brief-heading > .text-button { margin-top: 13px; }.meeting-section .brief-paragraph { margin-top: 14px; }.brief-finding { padding: 14px 0; border-bottom: 1px solid #e4ebee; }.brief-finding > summary { font-size: 13px; cursor: pointer; font-weight: 600; }.review-story-card > summary { font-size: 15px; cursor: pointer; font-weight: 600; }.review-story-card > h4 { margin-top: 20px; font-size: 14px; }
+.story-status { margin: 20px 0; padding: 18px 21px; background: #f5f1fc; border-radius: 12px; font-size: 13px; line-height: 1.7; }.story-status strong { display: block; font-size: 15px; margin-bottom: 5px; }
+.review-story-card { margin-top: 28px; border-top: 1px solid #dce5e9; padding-top: 22px; }.review-story-card > h3 { font-size: 18px; }.review-story-card .finding { margin-bottom: 20px; }.review-story-card .claim-comparison { margin-top: 12px; }.review-story-card .comparison-grid section { min-width: 0; }.story-unchanged { margin-top: 14px; font-size: 12px; color: #63747b; }
+.story-complete { margin-top: 30px; border-top: 1px solid #dce5e9; padding-top: 20px; }.story-complete > summary { font-size: 14px; font-weight: 600; cursor: pointer; }.story-complete h3 { margin-top: 25px; font-size: 17px; }
+.source-meaning { display: grid; gap: 10px; margin: 14px 0 20px; }.source-meaning > div { padding: 13px 15px; border-radius: 8px; background: #f2f7f8; font-size: 12px; line-height: 1.7; }.source-meaning strong { display: block; color: #264f59; }.source-meaning > div + div { background: #fff9ef; }
+@media(max-width:760px) { .reading-steps { grid-template-columns:1fr; gap:25px; }.reading-steps li { padding-left: 42px; position:relative; }.reading-step-number { position:absolute; left:0; top:0; }.reading-guide-heading h2 { font-size:23px; }.meeting-context { padding:17px; }.meeting-nav { gap:7px; }.meeting-nav a { font-size:11px; }.meeting-open-questions { padding:17px; } }
+@media print { .meeting-nav,.brief-section .text-button { display:none; }.decision-brief { border:0; }.brief-section { break-inside:avoid; } }

@@ -24,7 +24,7 @@ export function PublicShowcaseHero({count, loading, firstRunId, query, onQuery}:
       <div className="proof-big-number"><strong>{loading ? '—' : count}</strong><span>published<br />partnerships</span></div>
       <p>Source evidence, review decisions and a pilot plan for every pair.</p>
     </a>
-    <a className="proof-note proof-mint" href="#run=b738ce31-0d8d-4eba-a01e-f4deac26a632">
+    <a className="proof-note proof-mint" href="#run=b738ce31-0d8d-4eba-a01e-f4deac26a632&view=changes">
       <span className="proof-pill">Independent review</span><h2>Ask the difficult<br />questions.</h2>
       <p>A Critic can request changes or withhold approval. See a real revision.</p>
       <span className="proof-card-link">Follow the review <Icon name="arrow" size={17} /></span>

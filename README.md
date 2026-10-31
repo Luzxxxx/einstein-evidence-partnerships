@@ -9,7 +9,9 @@ Turn a company challenge into a research partnership you can inspect: the source
 <details>
 <summary>See the proposal, Critic revision and evidence inspector</summary>
 
-![A real approved partnership proposal](docs/images/proposal-overview.png)
+![The judge reading path](docs/images/reading-guide.png)
+
+![A real approved partnership meeting brief](docs/images/proposal-overview.png)
 
 ![Before and after a Critic-requested revision; this research Run ends with insufficient evidence](docs/images/critic-revision.png)
 
@@ -18,6 +20,14 @@ Turn a company challenge into a research partnership you can inspect: the source
 </details>
 
 The public demo replays real saved model runs. It needs no API key. New analysis runs locally with your own provider key; browser-based key entry is not yet implemented.
+
+## A three-minute walkthrough
+
+1. [Open a reviewed proposal](https://luzxxxx.github.io/einstein-evidence-partnerships/#run=4f61dda1-5656-43ec-b84a-26aa80abd541&view=overview). The meeting brief keeps the original company challenge, proposed work, validation plan and conditions together.
+2. Choose an **Evidence** citation. Inspect the exact source field and excerpt, then read the claim and review. Source integrity and semantic support are separate checks.
+3. [Follow a real Critic revision](https://luzxxxx.github.io/einstein-evidence-partnerships/#run=b738ce31-0d8d-4eba-a01e-f4deac26a632&view=changes). Findings sit next to the exact linked before/after Claims. The final research outcome remains **Insufficient evidence**.
+
+System approval records a reviewed proposal. Participation, commercial agreement and real-world trial outcomes still need confirmation. Every displayed proposal passage comes from its saved draft; the page does not rewrite it after approval.
 
 ## What to try
 

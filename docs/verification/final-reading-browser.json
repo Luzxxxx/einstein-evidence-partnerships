@@ -1,0 +1,118 @@
+{
+  "kind": "actual_isolated_browser_read_only_verification",
+  "scope": "saved real results on static local candidate",
+  "checks": [
+    "homepage has three actual proposals",
+    "home reading path has three steps",
+    "deep link enters actual Changes view",
+    "natural revision keeps insufficient outcome",
+    "complete original comparison remains available",
+    "parent-bound approval note d66da659-7683-4511-917f-38a9bbfefca2",
+    "all brief paragraphs exact d66da659-7683-4511-917f-38a9bbfefca2",
+    "parent-bound approval note 4f61dda1-5656-43ec-b84a-26aa80abd541",
+    "all brief paragraphs exact 4f61dda1-5656-43ec-b84a-26aa80abd541",
+    "parent-bound approval note d80bfe16-3fe3-4cfa-8334-e8b51bf4b425",
+    "all brief paragraphs exact d80bfe16-3fe3-4cfa-8334-e8b51bf4b425",
+    "keyboard navigation focuses target and preserves Run route",
+    "source integrity is separate from semantic meaning",
+    "failure remains failed",
+    "adversarial replay remains diagnostic",
+    "mobile landing has no horizontal overflow",
+    "mobile brief has no horizontal overflow",
+    "mobile revision has no horizontal overflow",
+    "saved terminal readable 447ecc18-ef58-4fd9-bae3-d36807fdbd3e",
+    "saved terminal readable 4f61dda1-5656-43ec-b84a-26aa80abd541",
+    "saved terminal readable 961b4dc2-9c85-49b8-84b9-910327832705",
+    "saved terminal readable b59a56d7-c18d-41df-957e-f911d06174cc",
+    "saved terminal readable cd38361e-fda0-438e-9820-bcd4acb7cbdb",
+    "saved terminal readable d66da659-7683-4511-917f-38a9bbfefca2",
+    "saved terminal readable d80bfe16-3fe3-4cfa-8334-e8b51bf4b425",
+    "saved terminal readable b738ce31-0d8d-4eba-a01e-f4deac26a632",
+    "saved terminal readable 0fc75288-4d8b-4f0a-bee1-62f19834a8fd"
+  ],
+  "viewports": [
+    {
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "captures": [
+    {
+      "name": "01-home.png",
+      "bytes": 185708,
+      "sha256": "8f6111e7d989420f5d05f9685a9c3ba174e11f961de4c5ba6e7f1d3de074d38d",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "02-judge-reading-path.png",
+      "bytes": 84464,
+      "sha256": "b6ec1e4412461626817820ae96eb9dff56ba615731d8c5d92a35a1085603834c",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "03-real-critic-story.png",
+      "bytes": 117569,
+      "sha256": "ca19ba4b0d37dac9f75e6eea68b83cef2c34e1cfddbd296ad4dde51f0f62112c",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "04-meeting-brief.png",
+      "bytes": 79328,
+      "sha256": "2f623f90c45a366357773312a613694318b1f74ab3d17df7f7216f5f73eb2314",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "05-validation-plan.png",
+      "bytes": 84874,
+      "sha256": "69ba6a37f70b0c1b78400297c062f49585a3a185648521134fed9ae591d3d931",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "06-source-inspector.png",
+      "bytes": 169340,
+      "sha256": "0cf455ab09a94576576c06a8b9443618e29fbdf1031330045fa902f982048be2",
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "name": "07-mobile-reading-path.png",
+      "bytes": 40471,
+      "sha256": "2e6815f0de9a3eea299cc6f12f52d190ec92d679156648f043855341f43d8937",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "08-mobile-brief.png",
+      "bytes": 44102,
+      "sha256": "ca9a26cab229a0c228ae1df5d0a084e1c398b86ec23032d861c6eee4d5003764",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "09-mobile-review-story.png",
+      "bytes": 45225,
+      "sha256": "e43888b1d682bcba157c515390761189df738abc457b95f9f17c518cb80b9479",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "requests": 243,
+  "methods": [
+    "GET"
+  ],
+  "exceptions": [],
+  "browserClosed": true,
+  "exitCode": 0,
+  "modelRequests": 0,
+  "fixtureModel": false,
+  "failure": null
+}
